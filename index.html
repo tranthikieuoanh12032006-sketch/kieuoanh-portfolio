@@ -325,7 +325,131 @@ function switchTab(tabName) {
     </div>
 </section>
 
+<!-- SECTION: MINH CHỨNG SƯ PHẠM (ĐIỀU HƯỚNG 3 MỤC NHƯ CANVA) -->
+<section id="minh-chung" class="py-20 bg-white border-t border-slate-100">
+    <div class="max-w-5xl mx-auto px-6 space-y-8">
+        
+        <!-- Tiêu đề Section -->
+        <div class="text-center space-y-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand">Hồ sơ năng lực</span>
+            <h2 class="text-3xl font-bold text-slate-900">Minh chứng Sư phạm & Nghiên cứu</h2>
+            <p class="text-slate-600 max-w-xl mx-auto text-sm">
+                Hệ thống tài liệu, giấy chứng nhận và minh chứng thực tế được phân loại trực quan theo từng hạng mục.
+            </p>
+        </div>
 
+        <!-- Bảng điều khiển chính (Chia làm 2 cột: Menu bên trái & Nội dung bên phải) -->
+        <div class="grid md:grid-cols-12 bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+            
+            <!-- Cột trái: Bảng điều khiển 3 mục -->
+            <div class="md:col-span-4 bg-slate-100/70 p-4 border-r border-slate-200 flex flex-col justify-start space-y-2">
+                <span class="text-xs font-bold text-slate-400 uppercase px-3 py-1">Danh mục minh chứng</span>
+                
+                <!-- Nút Mục 1 -->
+                <button type="button" onclick="switchMinhChung('muc1')" id="btn-muc1" 
+                    class="w-full text-left px-4 py-3 rounded-xl font-semibold text-sm bg-white text-brand shadow-sm transition flex items-center justify-between">
+                    <span>📁 1. Minh chứng Giảng dạy</span>
+                    <span class="text-xs">→</span>
+                </button>
+
+                <!-- Nút Mục 2 -->
+                <button type="button" onclick="switchMinhChung('muc2')" id="btn-muc2" 
+                    class="w-full text-left px-4 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:bg-white/60 hover:text-slate-900 transition flex items-center justify-between">
+                    <span>🏆 2. Giấy khen / Giải thưởng</span>
+                    <span class="text-xs opacity-0">→</span>
+                </button>
+
+                <!-- Nút Mục 3 -->
+                <button type="button" onclick="switchMinhChung('muc3')" id="btn-muc3" 
+                    class="w-full text-left px-4 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:bg-white/60 hover:text-slate-900 transition flex items-center justify-between">
+                    <span>📜 3. Chứng chỉ chuyên môn</span>
+                    <span class="text-xs opacity-0">→</span>
+                </button>
+            </div>
+
+            <!-- Cột phải: Nội dung hiển thị tương ứng khi chọn mục -->
+            <div class="md:col-span-8 p-6 md:p-8 bg-white flex flex-col justify-between">
+                
+                <!-- Nội dung Mục 1 -->
+                <div id="content-muc1" class="space-y-4">
+                    <div class="space-y-1">
+                        <span class="text-xs font-bold text-brand bg-brand-light px-2.5 py-1 rounded-md">Mục 1</span>
+                        <h3 class="text-xl font-bold text-slate-900 pt-2">Minh chứng Thực tế Giảng dạy Khoa học Tự nhiên</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Tổng hợp các giáo án thực tế, hình ảnh tổ chức hoạt động trải nghiệm lớp học và biên bản dự giờ từ giáo viên hướng dẫn.
+                        </p>
+                    </div>
+                    <div class="pt-4">
+                        <!-- Thay link Google Drive của bạn vào href bên dưới -->
+                        <a href="https://drive.google.com/drive/folders/LINK_GOOGLE_DRIVE_CUA_BAN" target="_blank" 
+                           class="inline-flex items-center gap-2 px-4 py-2.5 bg-brand text-white text-xs font-semibold rounded-xl hover:bg-brand-dark shadow-sm transition">
+                            🔗 Mở thư mục Google Drive chi tiết →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Nội dung Mục 2 (Mặc định ẩn) -->
+                <div id="content-muc2" class="space-y-4 hidden">
+                    <div class="space-y-1">
+                        <span class="text-xs font-bold text-brand bg-brand-light px-2.5 py-1 rounded-md">Mục 2</span>
+                        <h3 class="text-xl font-bold text-slate-900 pt-2">Giải thưởng & Thành tích Nghiên cứu Khoa học</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Bao gồm quyết định công nhận giải thưởng, giấy chứng nhận đề tài nghiên cứu khoa học cấp Khoa/Trường và các bằng khen liên quan.
+                        </p>
+                    </div>
+                    <div class="pt-4">
+                        <a href="https://drive.google.com/drive/folders/LINK_GOOGLE_DRIVE_CUA_BAN" target="_blank" 
+                           class="inline-flex items-center gap-2 px-4 py-2.5 bg-brand text-white text-xs font-semibold rounded-xl hover:bg-brand-dark shadow-sm transition">
+                            🔗 Xem minh chứng giải thưởng trên Drive →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Nội dung Mục 3 (Mặc định ẩn) -->
+                <div id="content-muc3" class="space-y-4 hidden">
+                    <div class="space-y-1">
+                        <span class="text-xs font-bold text-brand bg-brand-light px-2.5 py-1 rounded-md">Mục 3</span>
+                        <h3 class="text-xl font-bold text-slate-900 pt-2">Chứng chỉ Kỹ năng & Chuyên môn Khác</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Các chứng chỉ ngoại ngữ, tin học, kỹ năng mềm và chứng nhận hoàn thành các khóa đào tạo phương pháp sư phạm hiện đại.
+                        </p>
+                    </div>
+                    <div class="pt-4">
+                        <a href="https://drive.google.com/drive/folders/LINK_GOOGLE_DRIVE_CUA_BAN" target="_blank" 
+                           class="inline-flex items-center gap-2 px-4 py-2.5 bg-brand text-white text-xs font-semibold rounded-xl hover:bg-brand-dark shadow-sm transition">
+                            🔗 Xem chứng chỉ trên Google Drive →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Dòng ghi chú nhỏ dưới cùng -->
+                <div class="pt-6 mt-6 border-t border-slate-100 text-xs text-slate-400">
+                    * Toàn bộ tài liệu gốc được lưu trữ bảo mật và cập nhật đầy đủ trên Google Drive.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- SCRIPT XỬ LÝ CHUYỂN MỤC MINH CHỨNG -->
+<script>
+function switchMinhChung(mucID) {
+    // Ẩn tất cả nội dung và reset style các nút
+    ['muc1', 'muc2', 'muc3'].forEach(id => {
+        document.getElementById('content-' + id).classList.add('hidden');
+        const btn = document.getElementById('btn-' + id);
+        btn.className = "w-full text-left px-4 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:bg-white/60 hover:text-slate-900 transition flex items-center justify-between";
+        btn.querySelector('span:last-child').classList.add('opacity-0');
+    });
+
+    // Hiển thị mục được chọn và active nút tương ứng
+    document.getElementById('content-' + mucID).classList.remove('hidden');
+    const activeBtn = document.getElementById('btn-' + mucID);
+    activeBtn.className = "w-full text-left px-4 py-3 rounded-xl font-semibold text-sm bg-white text-brand shadow-sm transition flex items-center justify-between";
+    activeBtn.querySelector('span:last-child').classList.remove('opacity-0');
+}
+</script>
 
     <!-- SECTION 5: THÔNG TIN LIÊN HỆ & FOOTER (GOM TRANG 8 CŨ) -->
 <section id="contact" class="py-20 max-w-4xl mx-auto px-6 text-center space-y-8">
