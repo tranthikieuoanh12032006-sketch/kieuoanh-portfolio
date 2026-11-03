@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+    <title>Ô Nhiễm Môi Trường - Khoa Học Tự Nhiên 8</title>
+    <style>
+        /* ==============================
+           CSS - Phong cách & Bố cục
+           ============================== */
+        :root {
+            /* Bảng màu - Gam màu xanh nhựa, xanh đất, và tông tối */
+            --bg-color: #0b1116; /* Màu nền tối (xanh đen) */
+            --card-bg: #151e26;  /* Màu nền card (sáng hơn nền) */
+            --text-color: #e0e6ed; /* Màu chữ chính (xám sáng) */
+            --primary-accent: #34d399; /* Xanh lá cây sáng (nhấn mạnh giải pháp) */
+            --secondary-accent: #22d3ee; /* Xanh dương (nhấn mạnh nhựa) */
+            --text-highlight: #fff; /* Màu trắng cho tiêu đề lớn */
+            --correct-color: #10b981; /* Xanh lá (đúng) */
+            --incorrect-color: #ef4444; /* Đỏ (sai) */
+            
+            /* Font chữ */
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Container chính cho nội dung */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* ------------------------------
+           1. Header & Title (Dựa trên image_0.png)
+           ------------------------------ */
+        .header {
+            text-align: center;
+            padding: 100px 0 60px;
+            background: linear-gradient(180deg, rgba(11,17,22,0) 0%, rgba(21,30,38,1) 100%);
+        }
+
+        .header-label {
+            display: inline-block;
+            padding: 5px 15px;
+            border: 1px solid var(--primary-accent);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--primary-accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .main-title {
+            font-size: 3.5rem;
+            color: var(--text-highlight);
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin: 0;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            max-width: 600px;
+            margin: 20px auto 0;
+            font-weight: 400;
+        }
+
+        /* ------------------------------
+           2. Video (Dựa trên image_1.png)
+           ------------------------------ */
+        .video-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .section-label {
+            font-size: 1.5rem;
+            color: var(--text-highlight);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .video-instruction {
+            color: #a0aec0;
+            margin-bottom: 40px;
+        }
+
+        /* Khung trống để chèn video */
+        .video-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #000000; /* Nền đen cho khung video */
+    height: 480px; /* Chiều cao cố định cho trình phát MP4 */
+}
+
+        /* Chỉnh sửa thẻ <iframe> bên trong */
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Placeholder khi chưa có video */
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #718096;
+            font-size: 1.2rem;
+            background-color: #0d1217;
+        }
+
+        .video-summary {
+            max-width: 700px;
+            margin: 30px auto 0;
+            color: #a0aec0;
+            font-style: italic;
+        }
+
+        /* ------------------------------
+           3. Hiểu Biết Nhanh (Card chuyên nghiệp)
+           ------------------------------ */
+        .quick-knowledge {
+            background-color: #0d1217;
+            padding: 80px 0;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .knowledge-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .knowledge-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border-color: rgba(52, 211, 153, 0.2);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            color: var(--secondary-accent);
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            color: var(--text-highlight);
+            margin-bottom: 15px;
+        }
+
+        .card-text {
+            color: #cbd5e0;
+            font-size: 0.95rem;
+        }
+
+        /* Hiệu ứng gradient mờ ở góc card */
+        .card-glow {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(52,211,153,0.1) 0%, rgba(21,30,38,0) 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .knowledge-card:hover .card-glow {
+            opacity: 1;
+        }
+
+        /* ------------------------------
+           4. Nguyên Nhân & Biện Pháp
+           ------------------------------ */
+        .two-column-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            padding: 80px 0;
+        }
+
+        /* Nguyên nhân (Icons) */
+        .causes-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cause-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .cause-icon {
+            font-size: 1.8rem;
+            margin-right: 20px;
+            width: 40px;
+            text-align: center;
+        }
+
+        .cause-details h4 {
+            color: var(--text-highlight);
+            margin: 0 0 5px 0;
+        }
+
+        .cause-details p {
+            font-size: 0.95rem;
+            margin: 0;
+            color: #cbd5e0;
+        }
+
+        /* Giải pháp (Nửa còn lại) */
+        .solutions-text {
+            border-left: 1px solid #2d3748;
+            padding-left: 50px;
+        }
+
+        .solution-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-accent);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .solution-lead {
+            font-size: 1.1rem;
+            color: var(--text-highlight);
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .solution-subtext {
+            color: #a0aec0;
+            font-size: 0.95rem;
+        }
+
+        /* ------------------------------
+           5. Giải Đố (Quiz)
+           ------------------------------ */
+        .quiz-section {
+            background-color: var(--card-bg);
+            padding: 80px 0;
+            border-radius: 12px;
+            margin: 80px 0;
+        }
+
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .question {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #1a232b;
+            border-radius: 8px;
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            color: var(--text-highlight);
+            margin-bottom: 20px;
+        }
+
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+
+        .option-label {
+            display: block;
+            padding: 12px 18px;
+            margin-bottom: 10px;
+            background-color: #212c36;
+            border-radius: 6px;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .option-label:hover {
+            background-color: #2d3a48;
+        }
+
+        .option-input {
+            margin-right: 12px;
+        }
+
+        /* Phong cách cho đáp án đúng/sai khi kiểm tra */
+        .option-label.correct {
+            background-color: #1f3d33;
+            border-color: var(--correct-color);
+            color: var(--correct-color);
+        }
+
+        .option-label.correct .option-text::after {
+            content: ' ✓'; /* Dấu check cho đúng */
+            font-weight: bold;
+        }
+
+        .option-label.incorrect {
+            background-color: #3b2023;
+            border-color: var(--incorrect-color);
+            color: var(--incorrect-color);
+        }
+
+        .option-label.incorrect .option-text::after {
+            content: ' ✗'; /* Dấu X cho sai */
+            font-weight: bold;
+        }
+
+        .check-btn {
+            display: block;
+            width: 200px;
+            margin: 0 auto;
+            padding: 12px 24px;
+            background-color: var(--primary-accent);
+            color: #0b1116;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .check-btn:hover {
+            background-color: #2ab884;
+        }
+
+        /* ------------------------------
+           6. Footer
+           ------------------------------ */
+        .final-reminder {
+            text-align: center;
+            padding: 80px 0 120px;
+            border-top: 1px solid #2d3748;
+        }
+
+        .heart-icon {
+            font-size: 2rem;
+            color: var(--primary-accent);
+            margin-bottom: 20px;
+        }
+
+        .reminder-text {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--text-highlight);
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        /* ------------------------------
+           Hỗ trợ hiển thị trên thiết bị di động
+           ------------------------------ */
+        @media (max-width: 768px) {
+            .header {
+                padding: 60px 0 40px;
+            }
+
+            .main-title {
+                font-size: 2.2rem;
+            }
+
+            .two-column-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .solutions-text {
+                border-left: none;
+                padding-left: 0;
+                padding-top: 30px;
+                border-top: 1px solid #2d3748;
+            }
+
+            .solution-title {
+                font-size: 1.6rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reminder-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==============================
+         1. Header & Title
+         ============================== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-label">Khoa học tự nhiên 8 / Ô nhiễm môi trường</div>
+            <h1 class="main-title">Bí Ẩn Dưới Lòng Đất: <br>Thảm Họa Rác Nhựa</h1>
+            <p class="subtitle">Tìm hiểu cách rác thải nhựa tàn phá đất, cây cối và hệ sinh thái dưới lòng đất chúng ta.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- ==============================
+             2. Video
+             ============================== -->
+        <section class="video-section">
+            <h2 class="section-label">1. Quan sát đoạn video sau</h2>
+            <p class="video-instruction">Hãy tập trung lắng nghe và quan sát những tác hại nghiêm trọng mà rác thải nhựa, đặc biệt là túi nilon, gây ra cho hệ sinh thái dưới đất.</p>
+            
+            <div class="video-container">
+    <video controls style="width: 100%; height: 100%; object-fit: contain;">
+        <source src="https://res.cloudinary.com/wcvqlcew/video/upload/v1791409702/thamhoaonhiemmoitruong.mp4" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ phát video MP4.
+    </video>
+</div>
+            
+            <p class="video-summary"><strong>Tóm tắt:</strong> Video làm nổi bật cuộc khủng hoảng môi trường ít được chú ý: thiệt hại sâu sắc do túi nilon bị chôn vùi dưới đất, tàn phá sức khỏe của đất và cây cối.</p>
+        </section>
+        
+        <!-- ==============================
+             3. Hiểu Biết Nhanh
+             ============================== -->
+        <section class="quick-knowledge">
+            <div class="container">
+                <h2 class="section-label">2. Chuyện gì đang xảy ra dưới đất?</h2>
+                <div class="card-grid">
+                    
+                    <!-- Card 1 -->
+                    <div class="knowledge-card">
+                        <div class="card-icon">🪨💧</div>
+                        <h3 class="card-title">Màng Chống Thấm "Vĩnh Cửu"</h3>
+                        <p class="card-text">Lá khô phân hủy tự nhiên, nuôi dưỡng đất. Nhưng túi nilon tồn tại hàng trăm năm, tạo thành một lớp màng không thấm nước, ngăn cản nước mưa thấm xuống sâu.</p>
+                        <div class="card-glow"></div>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="knowledge-card">
+                        <div class="card-icon">🍂🌵</div>
+                        <h3 class="card-title">Đất Khô & Nứt Nẻ</h3>
+                        <p class="card-text">Rào cản nhựa chặn hoàn toàn nước thâm nhập, khiến đất bên dưới dần trở nên khô cằn và nứt nẻ. Cấu trúc đất bị hủy hoại, sinh vật và chất dinh dưỡng mất đi.</p>
+                        <div class="card-glow"></div>
+                    </div>
+                    
+                    <!-- Card 3 -->
+                    <div class="knowledge-card">
+                        <div class="card-icon">🌱☠️</div>
+                        <h3 class="card-title">Rễ Cây Bị Ngạt & Chết</h3>
+                        <p class="card-text">Rễ cây tìm dinh dưỡng bị lớp nhựa chặn lại, quấn chặt và chết. Cây yếu đi, khả năng quang hợp giảm, dẫn đến giải phóng nhiều khí độc hại, làm không khí tệ hơn.</p>
+                        <div class="card-glow"></div>
+                    </div>
+                    
+                    <!-- Card 4 -->
+                    <div class="knowledge-card">
+                        <div class="card-icon">🌐🏭</div>
+                        <h3 class="card-title">Hệ Sinh Thái Bị Chia Cắt</h3>
+                        <p class="card-text">Hệ sinh thái phong phú dưới đất bị rào cản nhựa chia cắt và làm ngạt. Sự sụp đổ của hệ sinh thái dưới đất ảnh hưởng đến mạng lưới sinh thái bề mặt rộng lớn.</p>
+                        <div class="card-glow"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+        <!-- ==============================
+             4. Nguyên Nhân & Biện Pháp
+             ============================== -->
+        <section class="two-column-section">
+            
+            <!-- Phần 3: Nguyên nhân (Trái) -->
+            <div class="causes-section">
+                <h2 class="section-label">3. Nguyên nhân gây ô nhiễm đất</h2>
+                <ul class="causes-list">
+                    <li class="cause-item">
+                        <div class="cause-icon">🛍️</div>
+                        <div class="cause-details">
+                            <h4>Túi Nilon & Bao Bì</h4>
+                            <p>Đây là loại rác nhựa phổ biến nhất bị chôn vùi, tồn tại hàng trăm năm không phân hủy.</p>
+                        </div>
+                    </li>
+                    <li class="cause-item">
+                        <div class="cause-icon">🧴</div>
+                        <div class="cause-details">
+                            <h4>Chai Nhựa & Đồ Nhựa</h4>
+                            <p>Sử dụng một lần và vứt bỏ không đúng nơi quy định, chai nhựa mất hàng nghìn năm để phân hủy.</p>
+                        </div>
+                    </li>
+                    <li class="cause-item">
+                        <div class="cause-icon">🏗️</div>
+                        <div class="cause-details">
+                            <h4>Chất Thải Xây Dựng</h4>
+                            <p>Rác thải từ các công trình xây dựng cũng có thể chứa các vật liệu nhựa, hóa chất độc hại.</p>
+                        </div>
+                    </li>
+                    <li class="cause-item">
+                        <div class="cause-icon">🚜</div>
+                        <div class="cause-details">
+                            <h4>Sử Dụng Nông Dược</h4>
+                            <p>Việc lạm dụng phân bón, thuốc trừ sâu hóa học cũng là nguyên nhân gây ô nhiễm đất nghiêm trọng.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Phần 4: Giải pháp (Phải) -->
+            <div class="solutions-section">
+                <div class="solutions-text">
+                    <h2 class="section-label">4. Giải pháp</h2>
+                    <p class="solution-title">Thay thế để bảo vệ!</p>
+                    <p class="solution-lead">Hành động ngay từ hôm nay để bảo vệ thế giới dưới lòng đất và sức khỏe của chính chúng ta.</p>
+                    <p class="solution-subtext">Thay thế túi nilon bằng túi vải hoặc các vật liệu dễ phân hủy tự nhiên là cách nhanh nhất. Điều này giúp nước thấm xuống, duy trì độ ẩm cho đất và hỗ trợ rễ cây phát triển khỏe mạnh.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ==============================
+             5. Giải Đố (Quiz)
+             ============================== -->
+        <section class="quiz-section">
+            <div class="quiz-container">
+                <h2 class="section-label" style="text-align: center;">5. Thử thách kiến thức nhanh</h2>
+                
+                <!-- Câu 1 -->
+                <div class="question" id="q1">
+                    <p class="question-text">Câu 1: Túi nilon bị chôn vùi dưới đất gây ra tác hại gì chính yếu nhất trong video?</p>
+                    <ul class="options">
+                        <label class="option-label"><input type="radio" name="q1" value="A" class="option-input"><span class="option-text">A. Làm đất giàu dinh dưỡng</span></label>
+                        <label class="option-label"><input type="radio" name="q1" value="B" class="option-input"><span class="option-text">B. Tạo thành màng chống thấm nước, ngăn nước thấm xuống</span></label>
+                        <label class="option-label"><input type="radio" name="q1" value="C" class="option-input"><span class="option-text">C. Làm đất tơi xốp hơn</span></label>
+                        <label class="option-label"><input type="radio" name="q1" value="D" class="option-input"><span class="option-text">D. Hỗ trợ rễ cây phát triển</span></label>
+                    </ul>
+                </div>
+                
+                <!-- Câu 2 -->
+                <div class="question" id="q2">
+                    <p class="question-text">Câu 2: Thay thế túi nilon bằng loại túi nào là giải pháp được đề xuất trong video?</p>
+                    <ul class="options">
+                        <label class="option-label"><input type="radio" name="q2" value="A" class="option-input"><span class="option-text">A. Túi nhựa khác</span></label>
+                        <label class="option-label"><input type="radio" name="q2" value="B" class="option-input"><span class="option-text">B. Túi vải (hoặc vật liệu dễ phân hủy)</span></label>
+                        <label class="option-label"><input type="radio" name="q2" value="C" class="option-input"><span class="option-text">C. Túi nilon mỏng hơn</span></label>
+                        <label class="option-label"><input type="radio" name="q2" value="D" class="option-input"><span class="option-text">D. Túi giấy thường</span></label>
+                    </ul>
+                </div>
+                
+                <button class="check-btn" onclick="checkAnswers()">Kiểm tra kết quả</button>
+            </div>
+        </section>
+        
+    </div> <!-- Kết thúc Container chính -->
+
+    <!-- ==============================
+         6. Footer (Dựa trên hình ảnh)
+         ============================== -->
+    <footer class="final-reminder">
+        <div class="container">
+            <div class="heart-icon">❤️🌏</div>
+            <p class="reminder-text">Bảo vệ Trái Đất cũng là bảo vệ chính chúng ta. Hãy cùng nhau hành động ngay hôm nay để giảm thiểu rác thải nhựa và bảo vệ môi trường.</p>
+        </div>
+    </footer>
+
+    <!-- ==============================
+         JavaScript - Logic cho Quiz
+         ============================== -->
+    <script>
+        function checkAnswers() {
+            // Đáp án đúng
+            const answers = {
+                q1: 'B',
+                q2: 'B'
+            };
+
+            // Kiểm tra từng câu hỏi
+            for (let qId in answers) {
+                const correctAnswer = answers[qId];
+                const selectedOption = document.querySelector(`input[name="${qId}"]:checked`);
+                const optionsParent = document.getElementById(qId).querySelector('.options');
+                const optionLabels = optionsParent.querySelectorAll('.option-label');
+
+                // Reset các lớp CSS đúng/sai trước đó
+                optionLabels.forEach(label => {
+                    label.classList.remove('correct', 'incorrect');
+                });
+
+                if (selectedOption) {
+                    const userAnswer = selectedOption.value;
+                    const selectedLabel = selectedOption.closest('.option-label');
+
+                    if (userAnswer === correctAnswer) {
+                        // Trả lời đúng
+                        selectedLabel.classList.add('correct');
+                    } else {
+                        // Trả lời sai
+                        selectedLabel.classList.add('incorrect');
+                        // Hiển thị đáp án đúng (tùy chọn - nếu bạn muốn hiển thị)
+                        // document.querySelector(`input[name="${qId}"][value="${correctAnswer}"]`).closest('.option-label').classList.add('correct');
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

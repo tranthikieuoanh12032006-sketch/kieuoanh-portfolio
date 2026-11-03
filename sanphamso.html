@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ấn phẩm số: Đối sánh KHTN VN & Singapore - Trần Thị Kiều Oanh</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts Inter & Quicksand -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Quicksand:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <!-- QRCode.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Quicksand', 'sans-serif'],
+          },
+          colors: {
+            // Tông màu chủ đạo nền/layout: Tím Pastel
+            primary: {
+              50: '#faf5ff', 100: '#f3e8ff', 200: '#e9d5ff', 300: '#d8b4fe',
+              400: '#c084fc', 500: '#a855f7', 600: '#9333ea', 700: '#7e22ce',
+              800: '#6b21a8', 900: '#581c87',
+            },
+            // Màu nhấn phân biệt quốc gia: Đỏ cho VN, Xanh cho SG
+            vn: {
+              50: '#fef2f2', 100: '#fee2e2', 200: '#fecaca', 500: '#ef4444', 
+              600: '#e11d48', 700: '#be123c', 800: '#9f1239', 900: '#881337',
+            },
+            sg: {
+              50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 500: '#22c55e', 
+              600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .glass-card { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); }
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white !important; color: black !important; }
+      .print-break-inside-avoid { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body class="bg-primary-50 text-slate-800 antialiased font-sans selection:bg-primary-300 selection:text-primary-900">
+
+  <!-- TOP HEADER (NO-PRINT) -->
+  <div class="bg-primary-900 text-primary-100 text-xs py-2 px-4 no-print border-b border-primary-800">
+    <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center gap-2 font-medium">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse"></span>
+        <span class="uppercase font-bold text-white tracking-wider">BÁO CÁO SEMINAR 1</span>
+        <span class="opacity-50">|</span>
+        <span>NHÓM 5: CHƯƠNG TRÌNH KHOA HỌC TỰ NHIÊN</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="bg-primary-800 px-2.5 py-0.5 rounded border border-primary-700 text-primary-200">Ấn phẩm số tương tác</span>
+        <button onclick="window.print()" class="hover:bg-primary-700 transition flex items-center gap-1.5 bg-primary-800 px-3 py-1 rounded-md border border-primary-700 text-white font-semibold">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+          In / Xuất PDF
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY QUICK NAVIGATION -->
+  <nav class="sticky top-0 z-40 glass-card shadow-sm border-b border-primary-100 no-print">
+    <div class="max-w-6xl mx-auto px-4 flex items-center justify-between">
+      <div class="py-3 font-heading font-extrabold text-primary-900 text-sm sm:text-base flex items-center gap-2">
+        <span class="bg-gradient-to-br from-primary-500 to-primary-700 text-white w-8 h-8 rounded-lg flex items-center justify-center text-sm shadow">N5</span>
+        <span class="truncate">Đối sánh KHTN VN & SG</span>
+      </div>
+      <div class="flex overflow-x-auto no-scrollbar gap-2 text-xs font-bold py-2">
+        <a href="#section-scope" class="px-4 py-1.5 rounded-full hover:bg-primary-100 text-primary-700 transition whitespace-nowrap">1. Phạm vi</a>
+        <a href="#section-structure" class="px-4 py-1.5 rounded-full hover:bg-primary-100 text-primary-700 transition whitespace-nowrap">2. Cấu trúc</a>
+        <a href="#section-table" class="px-4 py-1.5 rounded-full hover:bg-primary-100 text-primary-700 transition whitespace-nowrap">3. Bảng 8 Tiêu chí</a>
+        <a href="#section-example" class="px-4 py-1.5 rounded-full hover:bg-primary-100 text-primary-700 transition whitespace-nowrap">4. Ví dụ Tế Bào</a>
+        <a href="#section-takeaways" class="px-4 py-1.5 rounded-full hover:bg-primary-100 text-primary-700 transition whitespace-nowrap">5. Điểm kế thừa</a>
+        <a href="#section-resources" class="px-4 py-1.5 rounded-full hover:bg-primary-100 text-primary-700 transition whitespace-nowrap">6. QR Code</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 py-10 space-y-16">
+    
+    <!-- HERO HEADER -->
+    <header class="text-center space-y-5 max-w-4xl mx-auto pt-6">
+      <div class="inline-flex items-center gap-2 bg-white border border-primary-200 text-primary-700 text-xs px-4 py-1.5 rounded-full font-bold shadow-sm">
+        <span>Báo cáo nghiên cứu sư phạm</span>
+        <span>•</span>
+        <span>Tháng 10/2026</span>
+      </div>
+      <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight font-heading">
+        ĐỐI SÁNH CHƯƠNG TRÌNH GIÁO DỤC PHỔ THÔNG MÔN KHOA HỌC TỰ NHIÊN
+      </h1>
+      <p class="text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
+        Phân tích đối sánh giữa <strong class="text-vn-700">Chương trình GDPT 2018 (Việt Nam)</strong> và 
+        <strong class="text-sg-700">Lower Secondary Science Syllabus (Singapore G1/G2/G3)</strong> 
+        trên 8 tiêu chí chuyên sâu và trường hợp thực nghiệm thực tế.
+      </p>
+    </header>
+
+    <!-- PHẦN 1: TÊN HAI CHƯƠNG TRÌNH & PHẠM VI ĐỐI SÁNH -->
+    <section id="section-scope" class="scroll-mt-24 print-break-inside-avoid">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-9 h-9 rounded-xl bg-primary-200 text-primary-900 flex items-center justify-center font-black font-heading text-lg">1</div>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 font-heading">Tên hai chương trình & Phạm vi đối sánh</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Việt Nam Card -->
+        <div class="bg-white border-2 border-vn-200 rounded-[2rem] p-6 shadow-sm hover:shadow-md transition relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-vn-50 rounded-bl-full -z-10"></div>
+          <div class="flex items-center justify-between pb-4 border-b border-vn-100">
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">🇻🇳</span>
+              <div>
+                <h3 class="font-extrabold text-slate-900 text-lg leading-tight">Chương trình GDPT môn KHTN 2018</h3>
+                <span class="text-xs text-vn-600 font-bold">Bộ Giáo dục và Đào tạo Việt Nam</span>
+              </div>
+            </div>
+            <span class="bg-vn-600 text-white text-[10px] uppercase px-3 py-1 rounded-full font-bold shadow-sm">KHTN 2018</span>
+          </div>
+          <dl class="grid grid-cols-2 gap-3 mt-5 text-xs">
+            <div class="bg-vn-50/50 p-3 rounded-xl border border-vn-100">
+              <dt class="text-slate-500 font-medium">Cấp học / Lớp</dt>
+              <dd class="font-bold text-vn-900 text-sm mt-0.5">Lớp 6 đến Lớp 9 (THCS)</dd>
+            </div>
+            <div class="bg-vn-50/50 p-3 rounded-xl border border-vn-100">
+              <dt class="text-slate-500 font-medium">Độ tuổi</dt>
+              <dd class="font-bold text-vn-900 text-sm mt-0.5">11 – 15 tuổi</dd>
+            </div>
+            <div class="bg-vn-50/50 p-3 rounded-xl border border-vn-100">
+              <dt class="text-slate-500 font-medium">Năm ban hành</dt>
+              <dd class="font-bold text-vn-900 text-sm mt-0.5">2018 (TT 32/2018)</dd>
+            </div>
+            <div class="bg-vn-50/50 p-3 rounded-xl border border-vn-100">
+              <dt class="text-slate-500 font-medium">Thời lượng</dt>
+              <dd class="font-bold text-vn-900 text-sm mt-0.5">140 tiết / năm học</dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Singapore Card -->
+        <div class="bg-white border-2 border-sg-200 rounded-[2rem] p-6 shadow-sm hover:shadow-md transition relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-sg-50 rounded-bl-full -z-10"></div>
+          <div class="flex items-center justify-between pb-4 border-b border-sg-100">
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">🇸🇬</span>
+              <div>
+                <h3 class="font-extrabold text-slate-900 text-lg leading-tight">Lower Secondary Science (LSS)</h3>
+                <span class="text-xs text-sg-600 font-bold">Ministry of Education (MOE)</span>
+              </div>
+            </div>
+            <span class="bg-sg-600 text-white text-[10px] uppercase px-3 py-1 rounded-full font-bold shadow-sm">G1/G2/G3</span>
+          </div>
+          <dl class="grid grid-cols-2 gap-3 mt-5 text-xs">
+            <div class="bg-sg-50/50 p-3 rounded-xl border border-sg-100">
+              <dt class="text-slate-500 font-medium">Cấp học / Trình độ</dt>
+              <dd class="font-bold text-sg-900 text-sm mt-0.5">Secondary 1 & 2</dd>
+            </div>
+            <div class="bg-sg-50/50 p-3 rounded-xl border border-sg-100">
+              <dt class="text-slate-500 font-medium">Độ tuổi</dt>
+              <dd class="font-bold text-sg-900 text-sm mt-0.5">12 – 14 tuổi</dd>
+            </div>
+            <div class="bg-sg-50/50 p-3 rounded-xl border border-sg-100">
+              <dt class="text-slate-500 font-medium">Năm áp dụng</dt>
+              <dd class="font-bold text-sg-900 text-sm mt-0.5">Từ 2021</dd>
+            </div>
+            <div class="bg-sg-50/50 p-3 rounded-xl border border-sg-100">
+              <dt class="text-slate-500 font-medium">Phân luồng</dt>
+              <dd class="font-bold text-sg-900 text-sm mt-0.5">SBB (Subject-Based Banding)</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- Xử lý chênh lệch độ tuổi Callout -->
+      <div class="mt-5 bg-primary-100 border border-primary-200 rounded-xl p-4 sm:p-5 text-xs sm:text-sm text-primary-900 flex items-start gap-3 shadow-sm">
+        <svg class="w-6 h-6 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+        <div>
+          <strong class="font-extrabold text-primary-900 block mb-1">Giải quyết vấn đề chênh lệch độ tuổi:</strong>
+          Chương trình Khoa học THCS Singapore (LSS) chỉ kéo dài <strong>2 năm</strong> (12–14 tuổi, tương ứng lớp 7 và lớp 8 tại Việt Nam). Sau đó, học sinh Singapore bước vào giai đoạn <em>Upper Secondary</em> (15–16 tuổi, tương đương lớp 9 và 10 của Việt Nam) và được phân hóa học riêng các môn Vật lý, Hóa học, Sinh học chuyên sâu. Trong khi đó, môn KHTN tại Việt Nam được dạy tích hợp liền mạch trọn vẹn <strong class="text-primary-700">4 năm</strong> (Lớp 6–9).
+        </div>
+      </div>
+    </section>
+
+    <!-- PHẦN 2: SƠ ĐỒ CẤU TRÚC HAI CHƯƠNG TRÌNH -->
+    <section id="section-structure" class="scroll-mt-24 print-break-inside-avoid">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-9 h-9 rounded-xl bg-primary-200 text-primary-900 flex items-center justify-center font-black font-heading text-lg">2</div>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 font-heading">Sơ đồ cấu trúc hai chương trình</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Cấu trúc Việt Nam -->
+        <div class="bg-white rounded-[2rem] border-2 border-vn-100 p-6 shadow-sm space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-vn-50">
+            <h3 class="font-bold text-vn-800 text-base flex items-center gap-2">
+              <span class="w-3.5 h-3.5 rounded-full bg-vn-500"></span>
+              Cấu trúc KHTN Việt Nam: Mô hình 3 Trục Tích hợp
+            </h3>
+          </div>
+          <p class="text-sm text-slate-600 leading-relaxed font-medium">
+            Chương trình KHTN 2018 vận hành như một không gian 3 chiều đồng quy (Hình lập phương tích hợp):
+          </p>
+          <div class="space-y-3 text-sm">
+            <div class="p-3.5 bg-vn-50/60 rounded-xl border border-vn-100">
+              <span class="font-bold text-vn-900 block mb-1">1. Trục Chủ đề khoa học (4 Mạch nội dung)</span>
+              <span class="text-slate-700">Chất và sự biến đổi của chất • Vật sống • Năng lượng và sự biến đổi • Trái Đất và bầu trời.</span>
+            </div>
+            <div class="p-3.5 bg-vn-50/60 rounded-xl border border-vn-100">
+              <span class="font-bold text-vn-900 block mb-1">2. Trục Khái niệm & Nguyên lý chung (5 Nguyên lý)</span>
+              <span class="text-slate-700">Sự đa dạng • Tính cấu trúc • Tính hệ thống • Sự vận động và biến đổi • Sự tương tác.</span>
+            </div>
+            <div class="p-3.5 bg-vn-50/60 rounded-xl border border-vn-100">
+              <span class="font-bold text-vn-900 block mb-1">3. Trục Năng lực đặc thù (3 Thành phần)</span>
+              <span class="text-slate-700">Nhận thức KHTN • Tìm hiểu tự nhiên • Vận dụng kiến thức, kĩ năng đã học.</span>
+            </div>
+          </div>
+          <div class="text-[11px] text-slate-500 italic bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+            * Sắp xếp kiến thức: Chủ yếu theo logic tuyến tính, kết hợp mức độ nhất định với cấu trúc đồng tâm (Trang 8).
+          </div>
+        </div>
+
+        <!-- Cấu trúc Singapore -->
+        <div class="bg-white rounded-[2rem] border-2 border-sg-100 p-6 shadow-sm space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-sg-50">
+            <h3 class="font-bold text-sg-800 text-base flex items-center gap-2">
+              <span class="w-3.5 h-3.5 rounded-full bg-sg-500"></span>
+              Cấu trúc Singapore: Science Curriculum Framework
+            </h3>
+          </div>
+          <p class="text-sm text-slate-600 leading-relaxed font-medium">
+            Mô hình vòng tròn đồng tâm lấy triết lý sống làm tâm và tỏa ra các tầng phát triển năng lực:
+          </p>
+          <div class="space-y-3 text-sm">
+            <div class="p-3.5 bg-sg-50/60 rounded-xl border border-sg-100">
+              <span class="font-bold text-sg-900 block mb-1">Lõi trung tâm: Science for Life and Society</span>
+              <span class="text-slate-700">Khoa học vì Sự sống và Xã hội – hướng tới bình dân hóa khoa học và xây dựng nền tảng STEM.</span>
+            </div>
+            <div class="p-3.5 bg-sg-50/60 rounded-xl border border-sg-100">
+              <span class="font-bold text-sg-900 block mb-1">Tầng tầm nhìn: Bộ ba "3 Ins"</span>
+              <span class="text-slate-700"><strong>Inspire</strong> (Cảm hứng) • <strong>Inquire</strong> (Tìm tòi như nhà khoa học) • <strong>Innovate</strong> (Đổi mới sáng tạo bằng khoa học).</span>
+            </div>
+            <div class="p-3.5 bg-sg-50/60 rounded-xl border border-sg-100">
+              <span class="font-bold text-sg-900 block mb-1">Vòng ngoài: 3 Nền tảng Khoa học vững chắc</span>
+              <span class="text-slate-700">8 Ý tưởng cốt lõi (Core Ideas) • Thực hành khoa học (Practices of Science) • Đạo đức & Thái độ (Values, Ethics & Attitudes).</span>
+            </div>
+          </div>
+          <div class="text-[11px] text-slate-500 italic bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+            * Hai bàn tay nâng đỡ: Học sinh là người tìm tòi (Inquirers) - Giáo viên & Đối tác là người điều phối (Facilitators).
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHẦN 3: BẢNG 8 TIÊU CHÍ ĐỐI SÁNH -->
+    <section id="section-table" class="scroll-mt-24">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-9 h-9 rounded-xl bg-primary-200 text-primary-900 flex items-center justify-center font-black font-heading text-lg">3</div>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 font-heading">Bảng 8 Tiêu chí đối sánh</h2>
+      </div>
+
+      <!-- Responsive Table Container -->
+      <div class="bg-white rounded-[2rem] border border-primary-200 shadow-sm overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs sm:text-sm border-collapse min-w-[700px]">
+            <thead>
+              <tr class="bg-primary-900 text-white text-xs uppercase tracking-wider font-heading">
+                <th class="p-3.5 sm:p-4 w-12 text-center">STT</th>
+                <th class="p-3.5 sm:p-4 w-44">Tiêu chí</th>
+                <th class="p-3.5 sm:p-4 bg-primary-800">Điểm Tương đồng</th>
+                <th class="p-3.5 sm:p-4 bg-slate-900">Điểm Khác biệt cốt lõi</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 text-slate-700">
+              
+              <!-- 1. Mục tiêu -->
+              <tr class="hover:bg-primary-50/50 transition">
+                <td class="p-3.5 sm:p-4 text-center font-bold text-slate-400">1</td>
+                <td class="p-3.5 sm:p-4 font-bold text-slate-900">Mục tiêu chương trình</td>
+                <td class="p-3.5 sm:p-4 text-emerald-800 bg-emerald-50/20">Cả hai đều hướng tới phát triển năng lực khoa học, phẩm chất công dân có trách nhiệm và khơi gợi niềm đam mê khám phá thế giới tự nhiên.</td>
+                <td class="p-3.5 sm:p-4 text-red-900 bg-red-50/20">Việt Nam tập trung vào việc hình thành thế giới quan khoa học gắn với yêu cầu xây dựng đất nước, trong khi Singapore định hướng trực tiếp vào đổi mới sáng tạo STEM toàn cầu, trang bị năng lực số (EdTech) và chuẩn bị nghề nghiệp tương lai.</td>
+              </tr>
+
+              <!-- 2. Khung năng lực -->
+              <tr class="hover:bg-primary-50/50 transition">
+                <td class="p-3.5 sm:p-4 text-center font-bold text-slate-400">2</td>
+                <td class="p-3.5 sm:p-4 font-bold text-slate-900">Khung năng lực</td>
+                <td class="p-3.5 sm:p-4 text-emerald-800 bg-emerald-50/20">Đều cấu trúc năng lực dựa trên sự tích hợp toàn diện của ba thành tố cốt lõi: tri thức nhận thức, kĩ năng tiến trình thực hành và phẩm chất đạo đức khoa học.</td>
+                <td class="p-3.5 sm:p-4 text-red-900 bg-red-50/20">Việt Nam xác định 3 năng lực thành phần đặc thù môn học (Nhận thức, Tìm hiểu, Vận dụng), trong khi Singapore tích hợp sâu Khung năng lực thế kỷ 21 (21CC: Tư duy phản biện, Tư duy sáng chế, Năng lực dữ liệu) và Thực hành khoa học (WOTD, NOS, STSE).</td>
+              </tr>
+
+              <!-- 3. Ý tưởng cốt lõi -->
+              <tr class="hover:bg-primary-50/50 transition">
+                <td class="p-3.5 sm:p-4 text-center font-bold text-slate-400">3</td>
+                <td class="p-3.5 sm:p-4 font-bold text-slate-900">Ý tưởng cốt lõi (Core Ideas)</td>
+                <td class="p-3.5 sm:p-4 text-emerald-800 bg-emerald-50/20">Cả hai đều sử dụng các ý tưởng/nguyên lý khái quát lớn để liên kết và xóa mờ ranh giới ngăn cách giữa các phân môn Lý, Hóa, Sinh.</td>
+                <td class="p-3.5 sm:p-4 text-red-900 bg-red-50/20">Việt Nam xây dựng 5 nguyên lý - khái niệm chung (Đa dạng, Cấu trúc, Hệ thống, Vận động biến đổi, Tương tác), trong khi Singapore chuẩn hóa thành 8 Ý tưởng cốt lõi thống nhất (Pattern, Diversity, System, Structure, Energy, Matter, Balance, Change).</td>
+              </tr>
+
+              <!-- 4. Yêu cầu cần đạt -->
+              <tr class="hover:bg-primary-50/50 transition">
+                <td class="p-3.5 sm:p-4 text-center font-bold text-slate-400">4</td>
+                <td class="p-3.5 sm:p-4 font-bold text-slate-900">Yêu cầu cần đạt</td>
+                <td class="p-3.5 sm:p-4 text-emerald-800 bg-emerald-50/20">Đều dùng hệ thống các động từ hành vi có thể quan sát, lượng hóa và đánh giá được để mô tả chi tiết mức độ cần đạt của học sinh.</td>
+                <td class="p-3.5 sm:p-4 text-red-900 bg-red-50/20">Chương trình Việt Nam quy định rõ <em>"thực hiện đúng thao tác, không yêu cầu tìm sai số"</em> ở các phép đo lớp 6, ngược lại Singapore đưa việc nhận diện sai số ngẫu nhiên, sai số thị sai (parallax error) và sai số điểm 0 (zero error) thành một chuẩn đầu ra bắt buộc.</td>
+              </tr>
+
+              <!-- 5. Nội dung & Mạch kiến thức -->
+              <tr class="hover:bg-primary-50/50 transition">
+                <td class="p-3.5 sm:p-4 text-center font-bold text-slate-400">5</td>
+                <td class="p-3.5 sm:p-4 font-bold text-slate-900">Nội dung giáo dục</td>
+                <td class="p-3.5 sm:p-4 text-emerald-800 bg-emerald-50/20">Đều bao quát trọn vẹn 4 lĩnh vực khoa học cơ bản của tự nhiên: Khoa học Vật chất, Khoa học Sự sống, Năng lượng, và Trái Đất cùng Bầu trời.</td>
+                <td class="p-3.5 sm:p-4 text-red-900 bg-red-50/20">Việt Nam thiết kế chương trình đồng nhất 140 tiết/năm cho mọi đối tượng học sinh, trong khi Singapore phân hóa thành 3 luồng riêng biệt (G1 định hướng kỹ thuật đời sống; G2/G3 chuẩn học thuật nâng cao) kết hợp cơ chế phân luồng linh hoạt (SBB).</td>
+              </tr>
+
+              <!-- 6. Phương pháp dạy học -->
+              <tr class="hover:bg-primary-50/50 transition">
+                <td class="p-3.5 sm:p-4 text-center font-bold text-slate-400">6</td>
+                <td class="p-3.5 sm:p-4 font-bold text-slate-900">Phương pháp dạy học</td>
+                <td class="p-3.5 sm:p-4 text-emerald-800 bg-emerald-50/20">Đều chuyển dịch mạnh mẽ từ truyền thụ một chiều sang dạy học tích cực, đặt học sinh làm trung tâm của tiến trình tìm tòi khám phá (Inquiry-based Learning).</td>
+                <td class="p-3.5 sm:p-4 text-red-900 bg-red-50/20">Việt Nam chú trọng dạy học thực hành, giải quyết vấn đề và giáo dục STEM truyền thống, còn Singapore xây dựng khung Học tập kết hợp (Blended Learning) quy chuẩn hóa với học tập tại nhà (HBL) và số hóa bài giảng qua nền tảng quốc gia SLS.</td>
+              </tr>
+
+              <!-- 7. Thí nghiệm & Thiết bị -->
+              <tr class="hover:bg-primary-50/50 transition">
+                <td class="p-3.5 sm:p-4 text-center font-bold text-slate-400">7</td>
+                <td class="p-3.5 sm:p-4 font-bold text-slate-900">Thí nghiệm & Thiết bị</td>
+                <td class="p-3.5 sm:p-4 text-emerald-800 bg-emerald-50/20">Coi phòng thực hành và thiết bị thí nghiệm là môi trường học tập đặc trưng, bắt buộc học sinh phải trực tiếp thao tác để hình thành tri thức.</td>
+                <td class="p-3.5 sm:p-4 text-red-900 bg-red-50/20">Việt Nam trang bị thiết bị ở mức độ cơ bản truyền thống (dụng cụ thủy tinh, hóa chất thông dụng, cảm biến đơn lẻ), trong khi Singapore chuẩn hóa thiết bị cảm biến số và bộ ghi dữ liệu số (Data-loggers/sensors) xuyên suốt trong mọi thí nghiệm định lượng.</td>
+              </tr>
+
+              <!-- 8. Kiểm tra – Đánh giá -->
+              <tr class="hover:bg-primary-50/50 transition">
+                <td class="p-3.5 sm:p-4 text-center font-bold text-slate-400">8</td>
+                <td class="p-3.5 sm:p-4 font-bold text-slate-900">Kiểm tra – Đánh giá</td>
+                <td class="p-3.5 sm:p-4 text-emerald-800 bg-emerald-50/20">Kết hợp chặt chẽ đánh giá quá trình và đánh giá tổng kết; phối hợp nhận xét định tính với thang đo định lượng để phản hồi sự tiến bộ của người học.</td>
+                <td class="p-3.5 sm:p-4 text-red-900 bg-red-50/20">Việt Nam áp dụng công thức toán học chốt đầu điểm trung bình môn với các hệ số 1, 2, 3 và ma trận 4 mức độ nhận thức cố định, còn Singapore chú trọng đánh giá vì học tập (AfL), bài tập hiệu suất (Performance Task) và công cụ Hồ sơ học tập (Portfolio) mà không cộng dồn bù trừ điểm số.</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHẦN 4: VÍ DỤ THỰC CHỨNG (TẾ BÀO) -->
+    <section id="section-example" class="scroll-mt-24 print-break-inside-avoid">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-9 h-9 rounded-xl bg-primary-200 text-primary-900 flex items-center justify-center font-black font-heading text-lg">4</div>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 font-heading">Ví dụ thực chứng: Chủ đề "Tế Bào"</h2>
+      </div>
+
+      <div class="bg-primary-900 text-white rounded-[2rem] p-6 mb-6 shadow-md border border-primary-800">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-primary-700/60 pb-3">
+          <div class="flex items-center gap-2">
+            <span class="bg-primary-500 text-white text-xs px-3 py-1.5 rounded-lg font-bold uppercase tracking-wider shadow-sm">Chủ đề đối sánh</span>
+            <span class="font-bold text-base sm:text-lg">"Tế bào – Đơn vị cấu trúc cơ bản của sự sống"</span>
+          </div>
+          <span class="text-xs text-primary-300 font-bold bg-primary-950 px-3 py-1 rounded-full">KHTN Lớp 6 (VN) / Diversity - Model of Cells (SG)</span>
+        </div>
+        <p class="text-sm text-primary-100 mt-3 leading-relaxed">
+          Cùng đánh giá nội dung khoa học về tế bào, tuy nhiên hai nền giáo dục thiết kế công cụ kiểm tra và chuẩn đầu ra theo triết lý sư phạm hoàn toàn khác biệt:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Đề Việt Nam (Đỏ) -->
+        <div class="bg-white rounded-[2rem] border-2 border-vn-200 p-6 shadow-sm space-y-4 relative overflow-hidden">
+          <div class="absolute top-0 right-0 bg-vn-600 text-white text-[10px] uppercase font-bold px-4 py-1.5 rounded-bl-xl shadow-sm">
+            Nhận thức & Kỹ năng
+          </div>
+          <h3 class="font-extrabold text-vn-800 text-lg flex items-center gap-2 border-b border-slate-100 pb-2">
+            <span>🇻🇳</span> Yêu cầu tại Việt Nam
+          </h3>
+          <span class="text-sm text-vn-600 font-bold block">Tập trung vào nhận thức KHTN và quan sát thực hành trực diện</span>
+          
+          <div class="bg-vn-50 p-4 rounded-xl border border-vn-100 text-sm text-vn-900 space-y-2">
+            <ul class="list-disc list-inside space-y-1.5 font-medium">
+              <li><strong>Nêu được</strong> khái niệm và chức năng của tế bào.</li>
+              <li><strong>Nhận biết</strong> tế bào là đơn vị cấu trúc của sự sống.</li>
+              <li><strong>Phân biệt</strong> cấu tạo tế bào thực vật và tế bào động vật.</li>
+              <li>Thực hành <strong>quan sát tế bào</strong> bằng kính hiển vi quang học.</li>
+            </ul>
+          </div>
+
+          <div class="text-xs text-slate-600 space-y-1 pt-2">
+            <strong class="text-vn-900 block font-bold text-sm">Đặc điểm sư phạm:</strong>
+            <p>• Ngữ cảnh kiểm tra thường đóng, đánh giá khả năng ghi nhớ cơ sở sinh học.</p>
+            <p>• Khẳng định sự thành thạo thông qua việc "thực hiện đúng thao tác" lấy mẫu và soi kính.</p>
+          </div>
+        </div>
+
+        <!-- Đề Singapore (Xanh lá) -->
+        <div class="bg-white rounded-[2rem] border-2 border-sg-200 p-6 shadow-sm space-y-4 relative overflow-hidden">
+          <div class="absolute top-0 right-0 bg-sg-600 text-white text-[10px] uppercase font-bold px-4 py-1.5 rounded-bl-xl shadow-sm">
+            Tư duy Mô hình (Models)
+          </div>
+          <h3 class="font-extrabold text-sg-800 text-lg flex items-center gap-2 border-b border-slate-100 pb-2">
+            <span>🇸🇬</span> Yêu cầu tại Singapore
+          </h3>
+          <span class="text-sm text-sg-600 font-bold block">Nhấn mạnh bản chất Tri thức khoa học và Mô hình hóa</span>
+          
+          <div class="bg-sg-50 p-4 rounded-xl border border-sg-100 text-sm text-sg-900 space-y-2">
+            <ul class="list-disc list-inside space-y-1.5 font-medium">
+              <li>Đặt tế bào như một <strong class="text-sg-700 bg-sg-200 px-1 rounded">mô hình khoa học</strong>.</li>
+              <li>Sử dụng mô hình tế bào để <strong>suy luận, nhận diện</strong> sinh vật dựa trên cấu trúc mô hình đó.</li>
+              <li>Nhận thức rõ mối quan hệ tương hỗ: <em>Sự phát triển của công nghệ (kính hiển vi) tác động đến quá trình hình thành tri thức khoa học như thế nào.</em></li>
+            </ul>
+          </div>
+
+          <div class="text-xs text-slate-600 space-y-1 pt-2">
+            <strong class="text-sg-900 block font-bold text-sm">Đặc điểm sư phạm:</strong>
+            <p>• Ngữ cảnh mở, học sinh phải hiểu tế bào không chỉ là 1 vật thể mà là 1 "mô hình" do con người xây dựng để giải thích tự nhiên.</p>
+            <p>• Đánh giá sâu sắc trụ cột "Practices of Science" (Mối quan hệ KH & Công nghệ).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHẦN 5: 3 ĐIỂM CÓ THỂ HỌC HỎI -->
+    <section id="section-takeaways" class="scroll-mt-24">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-9 h-9 rounded-xl bg-primary-200 text-primary-900 flex items-center justify-center font-black font-heading text-lg">5</div>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 font-heading">3 Điểm có thể học hỏi, kế thừa cho Giáo viên Việt Nam</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Điểm 1 -->
+        <div class="bg-white rounded-[2rem] border border-primary-100 p-6 shadow-sm space-y-3 hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-700 flex items-center justify-center font-black text-xl mb-2">01</div>
+          <h3 class="font-extrabold text-slate-900 text-base">Đổi mới công cụ đánh giá với Hồ sơ học tập (Portfolio)</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Giáo viên có thể hướng dẫn học sinh lập Portfolio để lưu giữ hệ thống sản phẩm thực hành, bài báo cáo. Điều này giúp kích hoạt tư duy siêu nhận thức và trao quyền tự chủ đánh giá thay vì phụ thuộc bài thi giấy.
+          </p>
+        </div>
+
+        <!-- Điểm 2 -->
+        <div class="bg-white rounded-[2rem] border border-primary-100 p-6 shadow-sm space-y-3 hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-black text-xl mb-2">02</div>
+          <h3 class="font-extrabold text-slate-900 text-base">Đưa bối cảnh thực tiễn làm khởi điểm bài học</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Khởi động bài dạy từ những vấn đề nóng bỏng của địa phương. Nhiệm vụ học tập gắn với <em>"Science for Life and Society"</em> giúp học sinh nhận thức rõ giá trị thực tiễn của môn Khoa học.
+          </p>
+        </div>
+
+        <!-- Điểm 3 -->
+        <div class="bg-white rounded-[2rem] border border-primary-100 p-6 shadow-sm space-y-3 hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-2xl bg-rose-100 text-rose-700 flex items-center justify-center font-black text-xl mb-2">03</div>
+          <h3 class="font-extrabold text-slate-900 text-base">Chuyển trọng tâm sang Đánh giá vì học tập (AfL)</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Giảm áp lực điểm số bằng cách sử dụng dữ liệu đánh giá thường xuyên để vẽ sơ đồ lỗ hổng nhận thức, từ đó giáo viên đưa ra biện pháp hỗ trợ kịp thời cho từng cá nhân học sinh.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHẦN 6: NGUỒN TRÍCH DẪN & MÃ QR -->
+    <section id="section-resources" class="scroll-mt-24 pb-8">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-9 h-9 rounded-xl bg-primary-200 text-primary-900 flex items-center justify-center font-black font-heading text-lg">6</div>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 font-heading">Nguồn trích dẫn & Mã QR truy cập tài liệu</h2>
+      </div>
+
+      <div class="bg-white rounded-[2rem] border border-primary-200 p-6 sm:p-8 shadow-sm">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          
+          <!-- QR Code Duy nhất (Căn giữa bên trái) -->
+          <div class="flex justify-center md:justify-end pr-0 md:pr-4">
+            <div class="flex flex-col items-center text-center p-6 bg-primary-50 rounded-3xl border border-primary-100 w-full max-w-[280px] shadow-sm">
+              <div id="qrcode-full" class="bg-white p-3 rounded-2xl shadow-sm mb-4"></div>
+              <span class="text-base font-extrabold text-primary-900 uppercase tracking-wide">Báo cáo Word Đầy đủ</span>
+              <span class="text-xs text-primary-600 mt-1.5 font-medium">Quét để tải toàn văn chuyên đề nghiên cứu</span>
+            </div>
+          </div>
+
+          <!-- Danh mục tài liệu tham khảo APA chuẩn (Bên phải) -->
+          <div class="space-y-3 text-xs pl-0 md:pl-4">
+            <h4 class="font-extrabold text-slate-900 uppercase tracking-wider text-xs border-b border-slate-100 pb-2">
+              Danh mục Tài liệu Tham khảo (APA)
+            </h4>
+            <ul class="space-y-2.5 text-slate-600 leading-tight">
+              <li>• Bộ Giáo dục và Đào tạo. (2018). Chương trình giáo dục phổ thông môn Khoa học tự nhiên (Ban hành kèm Thông tư số 32/2018/TT-BGDĐT). Hà Nội.</li>
+              <li>• Bộ Giáo dục và Đào tạo. (2021). Thông tư số 22/2021/TT-BGDĐT quy định về đánh giá học sinh THCS và học sinh THPT. Hà Nội.</li>
+              <li>• Ministry of Education, Singapore. (2024). Science Syllabus: Lower Secondary General 1 Course. CPDD.</li>
+              <li>• Ministry of Education, Singapore. (2024). Science Syllabus: Lower Secondary General 2 & 3 Course. CPDD.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- FOOTER INFO -->
+        <div class="mt-8 pt-5 border-t border-slate-100 flex flex-wrap justify-between items-center text-xs text-slate-500 gap-2">
+          <div>
+            <strong>Khai báo công cụ Trí tuệ Nhân tạo:</strong> Ấn phẩm số được biên tập cấu trúc và HTML nội dung từ bản Word gốc của tác giả.
+          </div>
+          <div class="text-right font-semibold text-primary-700">
+            © 2026 NHÓM 5 – Sư phạm Khoa học Tự nhiên. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      
+      // ĐƯỜNG LINK GOOGLE DRIVE CỦA BẠN
+      const linkFileWord = "https://docs.google.com/document/d/18NeUhlnYpN_9ynQ_VNgcTEBjBpPU0kND/edit?usp=sharing&ouid=110269034307608272898&rtpof=true&sd=true";
+
+      // Tạo Mã QR Duy Nhất
+      new QRCode(document.getElementById("qrcode-full"), {
+        text: linkFileWord,
+        width: 140, // Đã tăng kích thước mã QR lên một chút để dễ quét hơn
+        height: 140,
+        colorDark : "#581c87", // Mã màu primary-900
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.M
+      });
+    });
+  </script>
+</body>
+</html>
