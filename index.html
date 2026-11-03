@@ -326,106 +326,143 @@ function switchTab(tabName) {
     </div>
 </section>
 
-<!-- SECTION: MINH CHỨNG SƯ PHẠM (ĐIỀU HƯỚNG 3 MỤC NHƯ CANVA) -->
-<section id="minh-chung" class="py-20 bg-white border-t border-slate-100">
-    <div class="max-w-5xl mx-auto px-6 space-y-8">
+<!-- SECTION: MINH CHỨNG & HỒ SƠ NĂNG LỰC -->
+<section id="minh-chung" class="py-20 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-6 space-y-8">
         
         <!-- Tiêu đề Section -->
         <div class="text-center space-y-3">
-            <span class="text-xs font-bold uppercase tracking-wider text-brand">Hồ sơ năng lực</span>
-            <h2 class="text-3xl font-bold text-slate-900">Minh chứng Sư phạm & Nghiên cứu</h2>
-            <p class="text-slate-600 max-w-xl mx-auto text-sm">
-                Hệ thống tài liệu, giấy chứng nhận và minh chứng thực tế được phân loại trực quan theo từng hạng mục.
+            <span class="text-xs font-bold uppercase tracking-wider text-brand bg-brand-light px-3 py-1 rounded-full">Hồ Sơ Năng Lực Sư Phạm</span>
+            <h2 class="text-3xl font-bold text-slate-900">Hệ Thống Minh Chứng & Mục Tiêu Phát Triển</h2>
+            <p class="text-slate-600 max-w-2xl mx-auto text-sm">
+                Bảng tổng hợp phiếu đánh giá cá nhân, mục tiêu định hướng bồi dưỡng và kịch bản sư phạm thực tế.
             </p>
         </div>
 
-        <!-- Bảng điều khiển chính (Chia làm 2 cột: Menu bên trái & Nội dung bên phải) -->
-        <div class="grid md:grid-cols-12 bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+        <!-- BẢNG ĐIỀU KHIỂN CHỌN 3 MỤC -->
+        <div class="flex flex-wrap justify-center gap-3 pb-4">
+            <button type="button" onclick="switchMinhChungTab('phieu')" id="btn-tab-phieu" 
+                class="px-5 py-2.5 rounded-xl font-semibold text-sm bg-brand text-white shadow-sm transition">
+                📋 1. Phiếu đánh giá cá nhân
+            </button>
+            <button type="button" onclick="switchMinhChungTab('muctieu')" id="btn-tab-muctieu" 
+                class="px-5 py-2.5 rounded-xl font-semibold text-sm bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 transition">
+                🎯 2. Mục tiêu bồi dưỡng & Tiến trình
+            </button>
+            <button type="button" onclick="switchMinhChungTab('the3')" id="btn-tab-the3" 
+                class="px-5 py-2.5 rounded-xl font-semibold text-sm bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 transition">
+                💡 3. Thẻ 3 (Kịch bản & Dẫn dắt)
+            </button>
+        </div>
+
+        <!-- KHUNG HIỂN THỊ NỘI DUNG -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 md:p-8 overflow-hidden">
             
-            <!-- Cột trái: Bảng điều khiển 3 mục -->
-            <div class="md:col-span-4 bg-slate-100/70 p-4 border-r border-slate-200 flex flex-col justify-start space-y-2">
-                <span class="text-xs font-bold text-slate-400 uppercase px-3 py-1">Danh mục minh chứng</span>
-                
-                <!-- Nút Mục 1 -->
-                <button type="button" onclick="switchMinhChung('muc1')" id="btn-muc1" 
-                    class="w-full text-left px-4 py-3 rounded-xl font-semibold text-sm bg-white text-brand shadow-sm transition flex items-center justify-between">
-                    <span>📁 1. Minh chứng Giảng dạy</span>
-                    <span class="text-xs">→</span>
-                </button>
+            <!-- NỘI DUNG MỤC 1: PHIẾU ĐÁNH GIÁ CÁ NHÂN -->
+            <div id="content-phieu" class="space-y-6">
+                <div class="border-b border-slate-100 pb-4">
+                    <h3 class="text-xl font-bold text-slate-900">Phiếu Đánh Giá Cá Nhân & Minh Chứng Năng Lực</h3>
+                    <p class="text-slate-500 text-xs mt-1">Tổng hợp các minh chứng thực tế theo từng chuẩn năng lực giáo viên và KHTN.</p>
+                </div>
 
-                <!-- Nút Mục 2 -->
-                <button type="button" onclick="switchMinhChung('muc2')" id="btn-muc2" 
-                    class="w-full text-left px-4 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:bg-white/60 hover:text-slate-900 transition flex items-center justify-between">
-                    <span>🏆 2. Giấy khen / Giải thưởng</span>
-                    <span class="text-xs opacity-0">→</span>
-                </button>
-
-                <!-- Nút Mục 3 -->
-                <button type="button" onclick="switchMinhChung('muc3')" id="btn-muc3" 
-                    class="w-full text-left px-4 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:bg-white/60 hover:text-slate-900 transition flex items-center justify-between">
-                    <span>📜 3. Chứng chỉ chuyên môn</span>
-                    <span class="text-xs opacity-0">→</span>
-                </button>
+                <!-- Bảng dữ liệu mục 1 (Dạng responsive scroll) -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-xs md:text-sm">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 uppercase tracking-wider text-[11px] font-bold">
+                                <th class="p-3 border border-slate-200 text-center w-16">Mã</th>
+                                <th class="p-3 border border-slate-200">Năng lực thành phần</th>
+                                <th class="p-3 border border-slate-200 text-center w-20">Cơ bản</th>
+                                <th class="p-3 border border-slate-200 text-center w-20">Thành thạo</th>
+                                <th class="p-3 border border-slate-200 text-center w-20">Nâng cao</th>
+                                <th class="p-3 border border-slate-200">Minh chứng</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-slate-600">
+                            <!-- Hàng 1.1 -->
+                            <tr>
+                                <td class="p-3 border border-slate-200 text-center font-semibold">1.1</td>
+                                <td class="p-3 border border-slate-200">Dạy học và giáo dục trong môi trường số</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200 text-center font-bold text-brand">X</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200">
+                                    Tự thiết kế mô phỏng sự nở vì nhiệt... 
+                                    <a href="https://drive.google.com" target="_blank" class="text-brand font-semibold underline block mt-1">🔗 Thí nghiệm mô phỏng</a>
+                                </td>
+                            </tr>
+                            <!-- Hàng 1.2 -->
+                            <tr>
+                                <td class="p-3 border border-slate-200 text-center font-semibold">1.2</td>
+                                <td class="p-3 border border-slate-200">Hướng dẫn, hỗ trợ học tập</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200 text-center font-bold text-brand">X</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200">
+                                    Tự thiết kế, sơ đồ tư duy bài giảng...
+                                    <a href="https://drive.google.com" target="_blank" class="text-brand font-semibold underline block mt-1">🔗 Sơ đồ tư duy</a>
+                                </td>
+                            </tr>
+                            <!-- Hàng 1.3 -->
+                            <tr>
+                                <td class="p-3 border border-slate-200 text-center font-semibold">1.3</td>
+                                <td class="p-3 border border-slate-200">Cá nhân hoá người học</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200 text-center font-bold text-brand">X</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200">
+                                    Thiết kế bài đánh giá với các mức độ câu hỏi...
+                                    <a href="https://drive.google.com" target="_blank" class="text-brand font-semibold underline block mt-1">🔗 Phiếu học tập dựa trên năng lực</a>
+                                </td>
+                            </tr>
+                            <!-- Bạn có thể bổ sung các hàng tiếp theo tương tự từ ảnh 6, 7, 8, 9, 10 -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
-            <!-- Cột phải: Nội dung hiển thị tương ứng khi chọn mục -->
-            <div class="md:col-span-8 p-6 md:p-8 bg-white flex flex-col justify-between">
-                
-                <!-- Nội dung Mục 1 -->
-                <div id="content-muc1" class="space-y-4">
-                    <div class="space-y-1">
-                        <span class="text-xs font-bold text-brand bg-brand-light px-2.5 py-1 rounded-md">Mục 1</span>
-                        <h3 class="text-xl font-bold text-slate-900 pt-2">Minh chứng Thực tế Giảng dạy Khoa học Tự nhiên</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Tổng hợp các giáo án thực tế, hình ảnh tổ chức hoạt động trải nghiệm lớp học và biên bản dự giờ từ giáo viên hướng dẫn.
-                        </p>
-                    </div>
-                    <div class="pt-4">
-                        <!-- Thay link Google Drive của bạn vào href bên dưới -->
-                        <a href="https://drive.google.com/drive/folders/LINK_GOOGLE_DRIVE_CUA_BAN" target="_blank" 
-                           class="inline-flex items-center gap-2 px-4 py-2.5 bg-brand text-white text-xs font-semibold rounded-xl hover:bg-brand-dark shadow-sm transition">
-                            🔗 Mở thư mục Google Drive chi tiết →
-                        </a>
-                    </div>
+            <!-- NỘI DUNG MỤC 2: MỤC TIÊU BỒI DƯỠNG & TIẾN TRÌNH -->
+            <div id="content-muctieu" class="space-y-6 hidden">
+                <div class="border-b border-slate-100 pb-4">
+                    <h3 class="text-xl font-bold text-slate-900">Mục Tiêu Bồi Dưỡng & Tiến Trình Phát Triển Năng Lực</h3>
+                    <p class="text-slate-500 text-xs mt-1">Kế hoạch chi tiết theo tuần và các sản phẩm dự kiến.</p>
                 </div>
 
-                <!-- Nội dung Mục 2 (Mặc định ẩn) -->
-                <div id="content-muc2" class="space-y-4 hidden">
-                    <div class="space-y-1">
-                        <span class="text-xs font-bold text-brand bg-brand-light px-2.5 py-1 rounded-md">Mục 2</span>
-                        <h3 class="text-xl font-bold text-slate-900 pt-2">Giải thưởng & Thành tích Nghiên cứu Khoa học</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Bao gồm quyết định công nhận giải thưởng, giấy chứng nhận đề tài nghiên cứu khoa học cấp Khoa/Trường và các bằng khen liên quan.
-                        </p>
+                <div class="space-y-4 text-sm text-slate-700">
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
+                        <h4 class="font-bold text-slate-900">1. Lĩnh vực 2.3: Phản hồi và đánh giá cải tiến</h4>
+                        <p class="text-xs text-slate-600"><strong>Mục tiêu:</strong> Trong một học kì, nâng cao khả năng sử dụng công nghệ số để phân tích kết quả học tập, cung cấp phản hồi cụ thể, kịp thời.</p>
+                        <ul class="list-disc pl-5 text-xs space-y-1 pt-1">
+                            <li><strong>Tuần 1–3:</strong> Tìm hiểu và thực hiện sử dụng Google Forms, Google Sheets và Plickers. (Sản phẩm: Bộ câu hỏi đánh giá)[cite: 12].</li>
+                            <li><strong>Tuần 4–6:</strong> Thiết kế tiêu chuẩn đánh giá và mẫu phản hồi. (Sản phẩm: Bảng tiêu chí đánh giá)[cite: 12].</li>
+                            <li><strong>Tuần 7–10:</strong> Thực hiện phân tích kết quả kiểm tra. (Sản phẩm: Bảng phân tích kết quả học tập)[cite: 12].</li>
+                        </ul>
                     </div>
-                    <div class="pt-4">
-                        <a href="https://drive.google.com/drive/folders/LINK_GOOGLE_DRIVE_CUA_BAN" target="_blank" 
-                           class="inline-flex items-center gap-2 px-4 py-2.5 bg-brand text-white text-xs font-semibold rounded-xl hover:bg-brand-dark shadow-sm transition">
-                            🔗 Xem minh chứng giải thưởng trên Drive →
-                        </a>
+
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
+                        <h4 class="font-bold text-slate-900">2. Lĩnh vực 2.2: Phân tích kết quả học tập</h4>
+                        <p class="text-xs text-slate-600">Theo dõi chi tiết tiến trình 15 tuần phát triển năng lực phân tích dữ liệu học sinh[cite: 12, 13, 14].</p>
                     </div>
                 </div>
+            </div>
 
-                <!-- Nội dung Mục 3 (Mặc định ẩn) -->
-                <div id="content-muc3" class="space-y-4 hidden">
-                    <div class="space-y-1">
-                        <span class="text-xs font-bold text-brand bg-brand-light px-2.5 py-1 rounded-md">Mục 3</span>
-                        <h3 class="text-xl font-bold text-slate-900 pt-2">Chứng chỉ Kỹ năng & Chuyên môn Khác</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Các chứng chỉ ngoại ngữ, tin học, kỹ năng mềm và chứng nhận hoàn thành các khóa đào tạo phương pháp sư phạm hiện đại.
-                        </p>
-                    </div>
-                    <div class="pt-4">
-                        <a href="https://drive.google.com/drive/folders/LINK_GOOGLE_DRIVE_CUA_BAN" target="_blank" 
-                           class="inline-flex items-center gap-2 px-4 py-2.5 bg-brand text-white text-xs font-semibold rounded-xl hover:bg-brand-dark shadow-sm transition">
-                            🔗 Xem chứng chỉ trên Google Drive →
-                        </a>
-                    </div>
+            <!-- NỘI DUNG MỤC 3: THẺ 3 (KỊCH BẢN & DẪN DẮT) -->
+            <div id="content-the3" class="space-y-6 hidden">
+                <div class="border-b border-slate-100 pb-4">
+                    <h3 class="text-xl font-bold text-slate-900">Thẻ 3: Kịch Bản & Tình Huống Sư Phạm Thực Tế</h3>
+                    <p class="text-slate-500 text-xs mt-1">Nội dung dẫn dắt tư duy khoa học và giải quyết vấn đề.</p>
                 </div>
 
-                <!-- Dòng ghi chú nhỏ dưới cùng -->
-                <div class="pt-6 mt-6 border-t border-slate-100 text-xs text-slate-400">
-                    * Toàn bộ tài liệu gốc được lưu trữ bảo mật và cập nhật đầy đủ trên Google Drive.
+                <div class="p-6 bg-purple-50/50 rounded-2xl border border-purple-100 text-slate-700 text-sm leading-relaxed space-y-4">
+                    <p class="italic font-medium text-slate-800">
+                        "Trong các bộ phim siêu anh hùng như X-Men hay Spider-Man, 'đột biến' thường mang lại cho nhân vật những siêu năng lực vô song. Nhưng mà, quay trở lại thế giới sinh học thực tại, tự nhiên đôi khi rất phũ phàng."
+                    </p>
+                    <p>
+                        Các em hãy nhìn vào chú thỏ màu đen trong bức ảnh này. Chú ta vừa được sinh ra trong một gia đình thỏ trắng muốt. Bác sĩ thú y kết luận đây là kết quả của một <strong>đột biến gen ngẫu nhiên</strong> xảy ra trong quá trình nhân đôi DNA.
+                    </p>
+                    <p>
+                        Hãy tưởng tượng, chú thỏ này đang sống trong một khu rừng rậm rạp với nhiều thân cây sẫm màu, bóng râm, và đặc biệt là có những con sói đói luôn rình rập. Vậy theo các em, việc mang một đột biến biến mình thành 'kẻ khác biệt' như thế này đối với sinh vật nói chung là một điều xui xẻo (có hại) hay là một lợi thế?
+                    </p>
                 </div>
             </div>
 
@@ -433,22 +470,19 @@ function switchTab(tabName) {
     </div>
 </section>
 
-<!-- SCRIPT XỬ LÝ CHUYỂN MỤC MINH CHỨNG -->
+<!-- SCRIPT CHUYỂN TAB MINH CHỨNG -->
 <script>
-function switchMinhChung(mucID) {
-    // Ẩn tất cả nội dung và reset style các nút
-    ['muc1', 'muc2', 'muc3'].forEach(id => {
+function switchMinhChungTab(tabID) {
+    const tabs = ['phieu', 'muctieu', 'the3'];
+    tabs.forEach(id => {
         document.getElementById('content-' + id).classList.add('hidden');
-        const btn = document.getElementById('btn-' + id);
-        btn.className = "w-full text-left px-4 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:bg-white/60 hover:text-slate-900 transition flex items-center justify-between";
-        btn.querySelector('span:last-child').classList.add('opacity-0');
+        const btn = document.getElementById('btn-tab-' + id);
+        btn.className = "px-5 py-2.5 rounded-xl font-semibold text-sm bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 transition";
     });
 
-    // Hiển thị mục được chọn và active nút tương ứng
-    document.getElementById('content-' + mucID).classList.remove('hidden');
-    const activeBtn = document.getElementById('btn-' + mucID);
-    activeBtn.className = "w-full text-left px-4 py-3 rounded-xl font-semibold text-sm bg-white text-brand shadow-sm transition flex items-center justify-between";
-    activeBtn.querySelector('span:last-child').classList.remove('opacity-0');
+    document.getElementById('content-' + tabID).classList.remove('hidden');
+    const activeBtn = document.getElementById('btn-tab-' + tabID);
+    activeBtn.className = "px-5 py-2.5 rounded-xl font-semibold text-sm bg-brand text-white shadow-sm transition";
 }
 </script>
 
