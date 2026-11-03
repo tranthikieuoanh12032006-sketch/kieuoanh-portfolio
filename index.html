@@ -362,24 +362,24 @@ function switchTab(tabName) {
             <div id="content-phieu" class="space-y-6">
                 <div class="border-b border-slate-100 pb-4">
                     <h3 class="text-xl font-bold text-slate-900">Phiếu Đánh Giá Cá Nhân & Minh Chứng Năng Lực</h3>
-                    <p class="text-slate-500 text-xs mt-1">Tổng hợp các minh chứng thực tế theo từng chuẩn năng lực giáo viên và KHTN.</p>
+                    <p class="text-slate-500 text-xs mt-1">Đầy đủ các mục từ 1.1 đến 6.4 kèm theo liên kết Google Drive minh chứng chi tiết.</p>
                 </div>
 
-                <!-- Bảng dữ liệu mục 1 (Dạng responsive scroll) -->
+                <!-- Bảng dữ liệu chuẩn 100% không lược bớt -->
                 <div class="overflow-x-auto">
                     <table class="w-full text-left border-collapse text-xs md:text-sm">
                         <thead>
                             <tr class="bg-slate-100 text-slate-700 uppercase tracking-wider text-[11px] font-bold">
                                 <th class="p-3 border border-slate-200 text-center w-16">Mã</th>
-                                <th class="p-3 border border-slate-200">Năng lực thành phần</th>
-                                <th class="p-3 border border-slate-200 text-center w-20">Cơ bản</th>
+                                <th class="p-3 border border-slate-200 w-1/3">Năng lực thành phần</th>
+                                <th class="p-3 border border-slate-200 text-center w-16">Cơ bản</th>
                                 <th class="p-3 border border-slate-200 text-center w-20">Thành thạo</th>
-                                <th class="p-3 border border-slate-200 text-center w-20">Nâng cao</th>
-                                <th class="p-3 border border-slate-200">Minh chứng</th>
+                                <th class="p-3 border border-slate-200 text-center w-16">Nâng cao</th>
+                                <th class="p-3 border border-slate-200">Minh chứng & Liên kết Google Drive</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-200 text-slate-600">
-                            <!-- Hàng 1.1 -->
+                            <!-- 1.1 -->
                             <tr>
                                 <td class="p-3 border border-slate-200 text-center font-semibold">1.1</td>
                                 <td class="p-3 border border-slate-200">Dạy học và giáo dục trong môi trường số</td>
@@ -387,11 +387,11 @@ function switchTab(tabName) {
                                 <td class="p-3 border border-slate-200 text-center font-bold text-brand">X</td>
                                 <td class="p-3 border border-slate-200 text-center"></td>
                                 <td class="p-3 border border-slate-200">
-                                    Tự thiết kế mô phỏng sự nở vì nhiệt... 
-                                    <a href="https://drive.google.com" target="_blank" class="text-brand font-semibold underline block mt-1">🔗 Thí nghiệm mô phỏng</a>
+                                    Tự thiết kế mô phỏng sự nở vì nhiệt của các chất rắn, lỏng và khí... <br>
+                                    <a href="https://drive.google.com/drive/folders/LINK_DRIVE_1.1" target="_blank" class="text-brand font-semibold underline hover:text-brand-dark">🔗 Thí nghiệm mô phỏng</a>[cite: 6]
                                 </td>
                             </tr>
-                            <!-- Hàng 1.2 -->
+                            <!-- 1.2 -->
                             <tr>
                                 <td class="p-3 border border-slate-200 text-center font-semibold">1.2</td>
                                 <td class="p-3 border border-slate-200">Hướng dẫn, hỗ trợ học tập</td>
@@ -399,11 +399,11 @@ function switchTab(tabName) {
                                 <td class="p-3 border border-slate-200 text-center font-bold text-brand">X</td>
                                 <td class="p-3 border border-slate-200 text-center"></td>
                                 <td class="p-3 border border-slate-200">
-                                    Tự thiết kế, sơ đồ tư duy bài giảng...
-                                    <a href="https://drive.google.com" target="_blank" class="text-brand font-semibold underline block mt-1">🔗 Sơ đồ tư duy</a>
+                                    Tự thiết kế, sơ đồ tư duy bài giảng khi học sinh chưa hiểu bài sau tiết học... <br>
+                                    <a href="https://drive.google.com/drive/folders/LINK_DRIVE_1.2" target="_blank" class="text-brand font-semibold underline hover:text-brand-dark">🔗 Sơ đồ tư duy</a>[cite: 6]
                                 </td>
                             </tr>
-                            <!-- Hàng 1.3 -->
+                            <!-- 1.3 -->
                             <tr>
                                 <td class="p-3 border border-slate-200 text-center font-semibold">1.3</td>
                                 <td class="p-3 border border-slate-200">Cá nhân hoá người học</td>
@@ -411,11 +411,219 @@ function switchTab(tabName) {
                                 <td class="p-3 border border-slate-200 text-center font-bold text-brand">X</td>
                                 <td class="p-3 border border-slate-200 text-center"></td>
                                 <td class="p-3 border border-slate-200">
-                                    Thiết kế bài đánh giá với các mức độ câu hỏi...
-                                    <a href="https://drive.google.com" target="_blank" class="text-brand font-semibold underline block mt-1">🔗 Phiếu học tập dựa trên năng lực</a>
+                                    Thiết kế bài đánh giá với các mức độ câu hỏi khác nhau khi trong lớp có các học sinh với mức độ tiếp thu khác nhau... <br>
+                                    <a href="https://drive.google.com/drive/folders/LINK_DRIVE_1.3" target="_blank" class="text-brand font-semibold underline hover:text-brand-dark">🔗 Phiếu học tập dựa trên từng năng lực của học sinh</a>[cite: 6]
                                 </td>
                             </tr>
-                            <!-- Bạn có thể bổ sung các hàng tiếp theo tương tự từ ảnh 6, 7, 8, 9, 10 -->
+                            <!-- 1.4 -->
+                            <tr>
+                                <td class="p-3 border border-slate-200 text-center font-semibold">1.4</td>
+                                <td class="p-3 border border-slate-200">Học tập cộng tác</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200 text-center font-bold text-brand">X</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200">
+                                    Sử dụng các nền tảng trực tuyến Canva, Google Docs để tổ chức hoạt động làm việc nhóm... <br>
+                                    <a href="https://drive.google.com/drive/folders/LINK_DRIVE_1.4" target="_blank" class="text-brand font-semibold underline hover:text-brand-dark">🔗 Minh chứng</a>[cite: 6]
+                                </td>
+                            </tr>
+
+                            <!-- 2.1 -->
+                            <tr>
+                                <td class="p-3 border border-slate-200 text-center font-semibold">2.1</td>
+                                <td class="p-3 border border-slate-200">Phương thức đánh giá</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200 text-center font-bold text-brand">X</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200">
+                                    Sử dụng Wayground khi kiểm tra bài cũ hoặc đánh giá nhanh mức độ hiểu bài của học sinh trong giờ học... <br>
+                                    <a href="https://drive.google.com/drive/folders/LINK_DRIVE_2.1" target="_blank" class="text-brand font-semibold underline hover:text-brand-dark">🔗 Bài trắc nghiệm đánh giá</a>[cite: 6]
+                                </td>
+                            </tr>
+                            <!-- 2.2 -->
+                            <tr>
+                                <td class="p-3 border border-slate-200 text-center font-semibold">2.2</td>
+                                <td class="p-3 border border-slate-200">Phân tích kết quả học tập</td>
+                                <td class="p-3 border border-slate-200 text-center font-bold text-brand">X</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200 text-center font-bold text-brand">X</td>
+                                <td class="p-3 border border-slate-200">
+                                    Khai thác dữ liệu từ các công cụ đánh giá trực tuyến để theo dõi kết quả, nhận diện những nội dung học sinh còn gặp khó khăn... <br>
+                                    <a href="https://drive.google.com/drive/folders/LINK_DRIVE_2.2" target="_blank" class="text-brand font-semibold underline hover:text-brand-dark">🔗 Phân tích kết quả</a>[cite: 7]
+                                </td>
+                            </tr>
+                            <!-- 2.3 -->
+                            <tr>
+                                <td class="p-3 border border-slate-200 text-center font-semibold">2.3</td>
+                                <td class="p-3 border border-slate-200">Phản hồi và đánh giá cải tiến</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200 text-center font-bold text-brand">X</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200">
+                                    Bảng Excel nhận xét, đánh giá học sinh... <br>
+                                    <a href="https://drive.google.com/drive/folders/LINK_DRIVE_2.3" target="_blank" class="text-brand font-semibold underline hover:text-brand-dark">🔗 Nhận xét</a>[cite: 7]
+                                </td>
+                            </tr>
+
+                            <!-- 3.1 -->
+                            <tr>
+                                <td class="p-3 border border-slate-200 text-center font-semibold">3.1</td>
+                                <td class="p-3 border border-slate-200">Tiếp cận và hoà nhập</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200 text-center font-bold text-brand">X</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200">
+                                    Lựa chọn và sử dụng các tài nguyên, công cụ số phù hợp nhằm tạo điều kiện cho học sinh có hoàn cảnh, năng lực và nhu cầu học tập khác nhau đều có thể tiếp cận kiến thức... <br>
+                                    <a href="https://drive.google.com/drive/folders/LINK_DRIVE_3.1" target="_blank" class="text-brand font-semibold underline hover:text-brand-dark">🔗 Bài giảng chứa video minh họa</a>[cite: 7]
+                                </td>
+                            </tr>
+                            <!-- 3.2 -->
+                            <tr>
+                                <td class="p-3 border border-slate-200 text-center font-semibold">3.2</td>
+                                <td class="p-3 border border-slate-200">Giải quyết vấn đề</td>
+                                <td class="p-3 border border-slate-200 text-center font-bold text-brand">X</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200 text-center font-bold text-brand">X</td>
+                                <td class="p-3 border border-slate-200">
+                                    Hướng dẫn sử dụng các phần mềm, công cụ số để hỗ trợ học sinh giải quyết những vấn đề cụ thể trong học tập... <br>
+                                    <a href="https://drive.google.com/drive/folders/LINK_DRIVE_3.2" target="_blank" class="text-brand font-semibold underline hover:text-brand-dark">🔗 Hướng dẫn giải quyết vấn đề</a>[cite: 7]
+                                </td>
+                            </tr>
+                            <!-- 3.3 -->
+                            <tr>
+                                <td class="p-3 border border-slate-200 text-center font-semibold">3.3</td>
+                                <td class="p-3 border border-slate-200">Khuyến khích sự tham gia tích cực</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200 text-center font-bold text-brand">X</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200">
+                                    Thiết kế các hoạt động học tập có ứng dụng công nghệ nhằm khuyến khích học sinh chủ động tham gia... <br>
+                                    <a href="https://drive.google.com/drive/folders/LINK_DRIVE_3.3" target="_blank" class="text-brand font-semibold underline hover:text-brand-dark">🔗 Trò chơi tương tác</a>[cite: 7]
+                                </td>
+                            </tr>
+
+                            <!-- 4.1 -->
+                            <tr>
+                                <td class="p-3 border border-slate-200 text-center font-semibold">4.1</td>
+                                <td class="p-3 border border-slate-200">Kĩ năng thông tin và dữ liệu</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200 text-center font-bold text-brand">X</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200">
+                                    Tìm kiếm, chọn lọc, đánh giá độ tin cậy của thông tin trên Internet và thực hiện trích dẫn nguồn tài liệu... <br>
+                                    <a href="https://drive.google.com/drive/folders/LINK_DRIVE_4.1" target="_blank" class="text-brand font-semibold underline hover:text-brand-dark">🔗 TLTK theo APA</a>[cite: 8]
+                                </td>
+                            </tr>
+                            <!-- 4.2 -->
+                            <tr>
+                                <td class="p-3 border border-slate-200 text-center font-semibold">4.2</td>
+                                <td class="p-3 border border-slate-200">Sáng tạo nội dung số</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200 text-center font-bold text-brand">X</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200">
+                                    Có khả năng sử dụng các phần mềm và công cụ số để thiết kế, chỉnh sửa học liệu... <br>
+                                    <a href="https://drive.google.com/drive/folders/LINK_DRIVE_4.2" target="_blank" class="text-brand font-semibold underline hover:text-brand-dark">🔗 PHT</a>[cite: 8]
+                                </td>
+                            </tr>
+                            <!-- 4.3 -->
+                            <tr>
+                                <td class="p-3 border border-slate-200 text-center font-semibold">4.3</td>
+                                <td class="p-3 border border-slate-200">An toàn</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200 text-center font-bold text-brand">X</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200">
+                                    Sử dụng cài đặt phân quyền và sao lưu trên Google Drive, Canva khi chia sẻ tài liệu... <br>
+                                    <a href="https://drive.google.com/drive/folders/LINK_DRIVE_4.3" target="_blank" class="text-brand font-semibold underline hover:text-brand-dark">🔗 phân quyền</a>[cite: 8]
+                                </td>
+                            </tr>
+
+                            <!-- 5.1 -->
+                            <tr>
+                                <td class="p-3 border border-slate-200 text-center font-semibold">5.1</td>
+                                <td class="p-3 border border-slate-200">Giao tiếp trong tổ chức</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200 text-center font-bold text-brand">X</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200">
+                                    Sử dụng Google Classroom hoặc Microsoft Teams khi trao đổi kế hoạch giảng dạy, gửi thông báo... <br>
+                                    <a href="https://drive.google.com/drive/folders/LINK_DRIVE_5.1" target="_blank" class="text-brand font-semibold underline hover:text-brand-dark">🔗 Thông báo</a>[cite: 8]
+                                </td>
+                            </tr>
+                            <!-- 5.2 -->
+                            <tr>
+                                <td class="p-3 border border-slate-200 text-center font-semibold">5.2</td>
+                                <td class="p-3 border border-slate-200">Hợp tác phát triển chuyên môn</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200 text-center font-bold text-brand">X</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200">
+                                    Chủ động sử dụng công nghệ số để trao đổi kiến thức, chia sẻ kinh nghiệm và phối hợp với bạn học... <br>
+                                    <a href="https://drive.google.com/drive/folders/LINK_DRIVE_5.2" target="_blank" class="text-brand font-semibold underline hover:text-brand-dark">🔗 SP nhóm</a>[cite: 8]
+                                </td>
+                            </tr>
+                            <!-- 5.3 -->
+                            <tr>
+                                <td class="p-3 border border-slate-200 text-center font-semibold">5.3</td>
+                                <td class="p-3 border border-slate-200">Phát triển, sử dụng, chia sẻ và quản lí học liệu số</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200 text-center font-bold text-brand">X</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200">
+                                    Xây dựng, sắp xếp, lưu trữ và chia sẻ các tài nguyên học tập một cách khoa học... <br>
+                                    <a href="https://drive.google.com/drive/folders/LINK_DRIVE_5.3" target="_blank" class="text-brand font-semibold underline hover:text-brand-dark">🔗 khbd</a>[cite: 9]
+                                </td>
+                            </tr>
+
+                            <!-- 6.1 -->
+                            <tr>
+                                <td class="p-3 border border-slate-200 text-center font-semibold">6.1</td>
+                                <td class="p-3 border border-slate-200">Tư duy lấy con người làm trung tâm</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200 text-center font-bold text-brand">X</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200">
+                                    Có ý thức lựa chọn và ứng dụng công nghệ dựa trên nhu cầu, đặc điểm và khả năng tiếp nhận của người học... <br>
+                                    <a href="https://drive.google.com/drive/folders/LINK_DRIVE_6.1" target="_blank" class="text-brand font-semibold underline hover:text-brand-dark">🔗 Giáo án lấy HS làm trung tâm</a>[cite: 9]
+                                </td>
+                            </tr>
+                            <!-- 6.2 -->
+                            <tr>
+                                <td class="p-3 border border-slate-200 text-center font-semibold">6.2</td>
+                                <td class="p-3 border border-slate-200">Đạo đức AI</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200 text-center font-bold text-brand">X</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200">
+                                    Có ý thức sử dụng trí tuệ nhân tạo một cách có trách nhiệm, biết kiểm tra tính chính xác... <br>
+                                    <a href="https://drive.google.com/drive/folders/LINK_DRIVE_6.2" target="_blank" class="text-brand font-semibold underline hover:text-brand-dark">🔗 AI hỗ trợ</a>[cite: 9]
+                                </td>
+                            </tr>
+                            <!-- 6.3 -->
+                            <tr>
+                                <td class="p-3 border border-slate-200 text-center font-semibold">6.3</td>
+                                <td class="p-3 border border-slate-200">Sư phạm AI</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200 text-center font-bold text-brand">X</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200">
+                                    Biết khai thác các công cụ trí tuệ nhân tạo để hỗ trợ thiết kế hoạt động dạy học, xây dựng câu hỏi, học liệu... <br>
+                                    <a href="https://drive.google.com/drive/folders/LINK_DRIVE_6.3" target="_blank" class="text-brand font-semibold underline hover:text-brand-dark">🔗 XD học liệu với AI</a>[cite: 9, 10]
+                                </td>
+                            </tr>
+                            <!-- 6.4 -->
+                            <tr>
+                                <td class="p-3 border border-slate-200 text-center font-semibold">6.4</td>
+                                <td class="p-3 border border-slate-200">AI cho phát triển chuyên môn</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200 text-center font-bold text-brand">X</td>
+                                <td class="p-3 border border-slate-200 text-center"></td>
+                                <td class="p-3 border border-slate-200">
+                                    Tìm hiểu và ứng dụng các công cụ trí tuệ nhân tạo để hỗ trợ tự học, nghiên cứu tài liệu... <br>
+                                    <a href="https://drive.google.com/drive/folders/LINK_DRIVE_6.4" target="_blank" class="text-brand font-semibold underline hover:text-brand-dark">🔗 Minh chứng AI phát triển chuyên môn</a>[cite: 10]
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
