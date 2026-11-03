@@ -184,51 +184,96 @@
             </p>
         </div>
 
-        <!-- Lưới trưng bày hình ảnh (Gallery Grid) -->
+        <!-- SECTION: HỌC LIỆU SỐ & MINH CHỨNG (TỐI ƯU TƯƠNG TÁC) -->
+<section id="resources" class="py-20 bg-slate-50 border-t border-slate-100">
+    <div class="max-w-6xl mx-auto px-6 space-y-12">
+        
+        <!-- Tiêu đề Section -->
+        <div class="text-center space-y-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand">Thực tế giảng dạy</span>
+            <h2 class="text-3xl font-bold text-slate-900">Học liệu số & Minh chứng Sư phạm</h2>
+            <p class="text-slate-600 max-w-xl mx-auto text-sm">
+                Nhấp vào hình ảnh hoặc nút xem chi tiết để mở lớn tài liệu, phiếu học tập và hệ thống đánh giá Plickers.
+            </p>
+        </div>
+
+        <!-- Lưới trưng bày tài liệu tương tác -->
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             
             <!-- Item 1: Plickers -->
-            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition group">
-                <div class="h-40 bg-slate-100 overflow-hidden flex items-center justify-center">
-                    <!-- Thay 'plickers.png' bằng tên file ảnh bạn đã lưu trong thư mục -->
-                    <img src="plickers.jpg" alt="Plickers" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition duration-300 flex flex-col justify-between">
+                <div>
+                    <!-- Bọc ảnh trong thẻ a để khi click vào sẽ mở file ảnh gốc kích thước lớn ở tab mới -->
+                    <a href="plickers.png" target="_blank" class="h-48 bg-slate-100 overflow-hidden flex items-center justify-center block relative group">
+                        <img src="plickers.png" alt="Plickers" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-slate-900/30 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-xs font-semibold backdrop-blur-[2px]">
+                            🔍 Nhấp để phóng to
+                        </div>
+                    </a>
+                    <div class="p-5 space-y-2">
+                        <h3 class="font-bold text-slate-900 text-base">Hệ thống Plickers</h3>
+                        <p class="text-slate-600 text-xs line-clamp-2">Ứng dụng thẻ quét mã QR đánh giá nhanh mức độ tiếp thu.</p>
+                    </div>
                 </div>
-                <div class="p-4 space-y-2">
-                    <h3 class="font-bold text-slate-900 text-base">Hệ thống Plickers</h3>
-                    <p class="text-slate-600 text-xs">Ứng dụng thẻ quét mã QR đánh giá nhanh mức độ tiếp thu của học sinh.</p>
+                <div class="px-5 pb-5 pt-0">
+                    <a href="plickers.png" target="_blank" class="block w-full text-center py-2 bg-brand-light text-brand text-xs font-semibold rounded-lg hover:bg-brand hover:text-white transition">Xem ảnh gốc lớn →</a>
                 </div>
             </div>
 
             <!-- Item 2: Phiếu học tập -->
-            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition group">
-                <div class="h-40 bg-slate-100 overflow-hidden flex items-center justify-center">
-                    <img src="phieuhoctap.jpg" alt="Phiếu học tập" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition duration-300 flex flex-col justify-between">
+                <div>
+                    <a href="phieu-hoc-tap.png" target="_blank" class="h-48 bg-slate-100 overflow-hidden flex items-center justify-center block relative group">
+                        <img src="phieu-hoc-tap.png" alt="Phiếu học tập" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-slate-900/30 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-xs font-semibold backdrop-blur-[2px]">
+                            🔍 Nhấp để phóng to
+                        </div>
+                    </a>
+                    <div class="p-5 space-y-2">
+                        <h3 class="font-bold text-slate-900 text-base">Phiếu học tập KHTN</h3>
+                        <p class="text-slate-600 text-xs line-clamp-2">Thiết kế phân hóa năng lực, kích thích tư duy phản biện.</p>
+                    </div>
                 </div>
-                <div class="p-4 space-y-2">
-                    <h3 class="font-bold text-slate-900 text-base">Phiếu học tập KHTN</h3>
-                    <p class="text-slate-600 text-xs">Thiết kế phân hóa năng lực, kích thích tư duy phản biện và thí nghiệm.</p>
+                <div class="px-5 pb-5 pt-0">
+                    <a href="phieu-hoc-tap.png" target="_blank" class="block w-full text-center py-2 bg-brand-light text-brand text-xs font-semibold rounded-lg hover:bg-brand hover:text-white transition">Xem ảnh gốc lớn →</a>
                 </div>
             </div>
 
             <!-- Item 3: Đánh giá -->
-            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition group">
-                <div class="h-40 bg-slate-100 overflow-hidden flex items-center justify-center">
-                    <img src="danhgia.jpg" alt="Đánh giá" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition duration-300 flex flex-col justify-between">
+                <div>
+                    <a href="danh-gia.png" target="_blank" class="h-48 bg-slate-100 overflow-hidden flex items-center justify-center block relative group">
+                        <img src="danh-gia.png" alt="Đánh giá" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-slate-900/30 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-xs font-semibold backdrop-blur-[2px]">
+                            🔍 Nhấp để phóng to
+                        </div>
+                    </a>
+                    <div class="p-5 space-y-2">
+                        <h3 class="font-bold text-slate-900 text-base">Tiêu chí Đánh giá</h3>
+                        <p class="text-slate-600 text-xs line-clamp-2">Rubric và công cụ theo dõi tiến trình học tập người học.</p>
+                    </div>
                 </div>
-                <div class="p-4 space-y-2">
-                    <h3 class="font-bold text-slate-900 text-base">Tiêu chí Đánh giá</h3>
-                    <p class="text-slate-600 text-xs">Rubric và các công cụ theo dõi tiến trình học tập của người học.</p>
+                <div class="px-5 pb-5 pt-0">
+                    <a href="danh-gia.png" target="_blank" class="block w-full text-center py-2 bg-brand-light text-brand text-xs font-semibold rounded-lg hover:bg-brand hover:text-white transition">Xem ảnh gốc lớn →</a>
                 </div>
             </div>
 
             <!-- Item 4: Minh chứng -->
-            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition group">
-                <div class="h-40 bg-slate-100 overflow-hidden flex items-center justify-center">
-                    <img src="minh-chung.png" alt="Minh chứng" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition duration-300 flex flex-col justify-between">
+                <div>
+                    <a href="minh-chung.png" target="_blank" class="h-48 bg-slate-100 overflow-hidden flex items-center justify-center block relative group">
+                        <img src="minh-chung.png" alt="Minh chứng" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-slate-900/30 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-xs font-semibold backdrop-blur-[2px]">
+                            🔍 Nhấp để phóng to
+                        </div>
+                    </a>
+                    <div class="p-5 space-y-2">
+                        <h3 class="font-bold text-slate-900 text-base">Minh chứng Thực tế</h3>
+                        <p class="text-slate-600 text-xs line-clamp-2">Tài liệu xác thực quá trình giảng dạy và nghiên cứu.</p>
+                    </div>
                 </div>
-                <div class="p-4 space-y-2">
-                    <h3 class="font-bold text-slate-900 text-base">Minh chứng Thực tế</h3>
-                    <p class="text-slate-600 text-xs">Hình ảnh và tài liệu xác thực quá trình giảng dạy, nghiên cứu sư phạm.</p>
+                <div class="px-5 pb-5 pt-0">
+                    <a href="minh-chung.png" target="_blank" class="block w-full text-center py-2 bg-brand-light text-brand text-xs font-semibold rounded-lg hover:bg-brand hover:text-white transition">Xem ảnh gốc lớn →</a>
                 </div>
             </div>
 
