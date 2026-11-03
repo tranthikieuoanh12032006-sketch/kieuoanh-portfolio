@@ -648,24 +648,166 @@ function switchTab(tabName) {
             <div id="content-muctieu" class="space-y-6 hidden">
                 <div class="border-b border-slate-100 pb-4">
                     <h3 class="text-xl font-bold text-slate-900">Mục Tiêu Bồi Dưỡng & Tiến Trình Phát Triển Năng Lực</h3>
-                    <p class="text-slate-500 text-xs mt-1">Kế hoạch chi tiết theo tuần và các sản phẩm dự kiến.</p>
+                    <p class="text-slate-500 text-xs mt-1">Hệ thống đầy đủ các lĩnh vực ưu tiên bồi dưỡng, tiến trình chi tiết theo tuần và sản phẩm dự kiến.</p>
                 </div>
 
-                <div class="space-y-4 text-sm text-slate-700">
-                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
-                        <h4 class="font-bold text-slate-900">1. Lĩnh vực 2.3: Phản hồi và đánh giá cải tiến</h4>
-                        <p class="text-xs text-slate-600"><strong>Mục tiêu:</strong> Trong một học kì, nâng cao khả năng sử dụng công nghệ số để phân tích kết quả học tập, cung cấp phản hồi cụ thể, kịp thời.</p>
-                        <ul class="list-disc pl-5 text-xs space-y-1 pt-1">
-                            <li><strong>Tuần 1–3:</strong> Tìm hiểu và thực hiện sử dụng Google Forms, Google Sheets và Plickers. (Sản phẩm: Bộ câu hỏi đánh giá)[cite: 12].</li>
-                            <li><strong>Tuần 4–6:</strong> Thiết kế tiêu chuẩn đánh giá và mẫu phản hồi. (Sản phẩm: Bảng tiêu chí đánh giá)[cite: 12].</li>
-                            <li><strong>Tuần 7–10:</strong> Thực hiện phân tích kết quả kiểm tra. (Sản phẩm: Bảng phân tích kết quả học tập)[cite: 12].</li>
-                        </ul>
+                <div class="space-y-6 text-sm text-slate-700">
+                    
+                    <!-- PHẦN 1: CÁC LĨNH VỰC ƯU TIÊN BỒI DƯỠNG -->
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-4">
+                        <h4 class="font-bold text-slate-900 text-base border-b border-slate-200 pb-2">CÁC LĨNH VỰC ƯU TIÊN BỒI DƯỠNG</h4>
+                        
+                        <!-- Lĩnh vực 2.3 -->
+                        <div class="space-y-3">
+                            <h5 class="font-semibold text-brand">1. Lĩnh vực 2.3: Phản hồi và đánh giá cải tiến</h5>
+                            <p class="text-xs text-slate-600">
+                                <strong>Mục tiêu:</strong> Trong một học kì, nâng cao khả năng sử dụng công nghệ số để phân tích kết quả học tập, cung cấp phản hồi cụ thể, kịp thời và điều chỉnh hoạt động dạy học Khoa học tự nhiên nhằm nâng cao hiệu quả học tập của học sinh[cite: 12].
+                            </p>
+                            
+                            <!-- Bảng chi tiết Lĩnh vực 2.3 -->
+                            <div class="overflow-x-auto pt-2">
+                                <table class="w-full text-left border-collapse text-xs">
+                                    <thead>
+                                        <tr class="bg-slate-200/70 text-slate-700 uppercase tracking-wider text-[10px] font-bold">
+                                            <th class="p-2.5 border border-slate-300 text-center w-24">Thời gian</th>
+                                            <th class="p-2.5 border border-slate-300">Hoạt động rèn luyện</th>
+                                            <th class="p-2.5 border border-slate-300">Sản phẩm dự kiến</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-slate-200 bg-white">
+                                        <tr>
+                                            <td class="p-2.5 border border-slate-300 text-center font-medium">Tuần 1–3</td>
+                                            <td class="p-2.5 border border-slate-300">Tìm hiểu và thực hiện sử dụng Google Forms, Google Sheets và Plickers để thu thập, tổng hợp kết quả học tập[cite: 12].</td>
+                                            <td class="p-2.5 border border-slate-300">Bộ câu hỏi đánh giá và bảng tổng hợp kết quả[cite: 12].</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-2.5 border border-slate-300 text-center font-medium">Tuần 4–6</td>
+                                            <td class="p-2.5 border border-slate-300">Thiết kế tiêu chí đánh giá và mẫu phản hồi cho hoạt động thực hành môn Khoa học tự nhiên[cite: 12].</td>
+                                            <td class="p-2.5 border border-slate-300">Bảng tiêu chí đánh giá và mẫu nhận xét[cite: 12].</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-2.5 border border-slate-300 text-center font-medium">Tuần 7–10</td>
+                                            <td class="p-2.5 border border-slate-300">Thực hành phân tích kết quả kiểm tra, xác định những nội dung học sinh thường mắc lỗi[cite: 12].</td>
+                                            <td class="p-2.5 border border-slate-300">Bảng phân tích kết quả học tập[cite: 12].</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-2.5 border border-slate-300 text-center font-medium">Tuần 11–14</td>
+                                            <td class="p-2.5 border border-slate-300">Dựa trên kết quả phân tích để điều chỉnh câu hỏi, học liệu và phương pháp tổ chức hoạt động học tập[cite: 12].</td>
+                                            <td class="p-2.5 border border-slate-300">Giáo án hoặc học liệu đã điều chỉnh[cite: 12].</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-2.5 border border-slate-300 text-center font-medium">Tuần 15–16</td>
+                                            <td class="p-2.5 border border-slate-300">Tổng hợp sản phẩm, tự đánh giá quá trình rèn luyện[cite: 12].</td>
+                                            <td class="p-2.5 border border-slate-300">Hồ sơ minh chứng năng lực 2.3[cite: 12].</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Lĩnh vực 2.2 -->
+                        <div class="space-y-2 pt-3">
+                            <h5 class="font-semibold text-brand">2. Lĩnh vực 2.2: Phân tích kết quả học tập</h5>
+                            <p class="text-xs text-slate-600">
+                                <strong>Mục tiêu:</strong> Trong một học kì, sẽ có khả năng sử dụng các công cụ số để thu thập, tổng hợp, xử lý và phân tích dữ liệu học tập của học sinh; nhận diện được những điểm mạnh, hạn chế và mức độ tiến bộ của người học. Từ kết quả phân tích có thể đưa ra nhận xét, đề xuất biện pháp điều chỉnh dạy học phù hợp với từng đối tượng học sinh[cite: 12].
+                            </p>
+                        </div>
                     </div>
 
-                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
-                        <h4 class="font-bold text-slate-900">2. Lĩnh vực 2.2: Phân tích kết quả học tập</h4>
-                        <p class="text-xs text-slate-600">Theo dõi chi tiết tiến trình 15 tuần phát triển năng lực phân tích dữ liệu học sinh[cite: 12, 13, 14].</p>
+                    <!-- PHẦN 2: TIẾN TRÌNH PHÁT TRIỂN NĂNG LỰC -->
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-4">
+                        <h4 class="font-bold text-slate-900 text-base border-b border-slate-200 pb-2">Tiến trình phát triển năng lực: Phân tích kết quả học tập</h4>
+                        
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse text-xs">
+                                <thead>
+                                    <tr class="bg-slate-200/70 text-slate-700 uppercase tracking-wider text-[10px] font-bold">
+                                        <th class="p-2.5 border border-slate-300 text-center w-16">Tuần</th>
+                                        <th class="p-2.5 border border-slate-300">Nội dung và hoạt động thực hiện</th>
+                                        <th class="p-2.5 border border-slate-300">Sản phẩm/minh chứng</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-200 bg-white">
+                                    <tr>
+                                        <td class="p-2.5 border border-slate-300 text-center font-semibold">1</td>
+                                        <td class="p-2.5 border border-slate-300">Tự đánh giá năng lực phân tích kết quả học tập hiện tại, xác định những kỹ năng còn hạn chế và xây dựng mục tiêu cải thiện[cite: 13].</td>
+                                        <td class="p-2.5 border border-slate-300">Phiếu tự đánh giá năng lực ban đầu[cite: 13].</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 border border-slate-300 text-center font-semibold">2</td>
+                                        <td class="p-2.5 border border-slate-300">Tìm hiểu các loại dữ liệu học tập như điểm kiểm tra, kết quả bài tập, mức độ tham gia và tiến độ hoàn thành nhiệm vụ của học sinh[cite: 13].</td>
+                                        <td class="p-2.5 border border-slate-300">Bảng phân loại dữ liệu học tập[cite: 13].</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 border border-slate-300 text-center font-semibold">3</td>
+                                        <td class="p-2.5 border border-slate-300">Làm quen và sử dụng Google Forms để thiết kế biểu mẫu khảo sát, bài kiểm tra trực tuyến nhằm thu thập dữ liệu học tập[cite: 13].</td>
+                                        <td class="p-2.5 border border-slate-300">Biểu mẫu Google Forms[cite: 13].</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 border border-slate-300 text-center font-semibold">4</td>
+                                        <td class="p-2.5 border border-slate-300">Thực hành sử dụng Google Sheets/Excel để nhập liệu, sắp xếp, lọc và phân loại kết quả học tập[cite: 13].</td>
+                                        <td class="p-2.5 border border-slate-300">Bảng dữ liệu học tập[cite: 13].</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 border border-slate-300 text-center font-semibold">5</td>
+                                        <td class="p-2.5 border border-slate-300">Sử dụng các công thức thống kê cơ bản để tính điểm trung bình, điểm cao nhất, thấp nhất và tỷ lệ học sinh đạt yêu cầu[cite: 13].</td>
+                                        <td class="p-2.5 border border-slate-300">Bảng thống kê kết quả học tập[cite: 13].</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 border border-slate-300 text-center font-semibold">6</td>
+                                        <td class="p-2.5 border border-slate-300">Thực hành trực quan hóa dữ liệu bằng biểu đồ cột, biểu đồ tròn và biểu đồ đường[cite: 13].</td>
+                                        <td class="p-2.5 border border-slate-300">Các biểu đồ phân tích kết quả học tập[cite: 13].</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 border border-slate-300 text-center font-semibold">7</td>
+                                        <td class="p-2.5 border border-slate-300">Phân tích và phân loại học sinh theo mức độ hoàn thành nhiệm vụ, xác định nhóm học sinh cần hỗ trợ[cite: 13].</td>
+                                        <td class="p-2.5 border border-slate-300">Bảng phân nhóm học sinh[cite: 13].</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 border border-slate-300 text-center font-semibold">8</td>
+                                        <td class="p-2.5 border border-slate-300">Thống kê các lỗi sai phổ biến, xác định những nội dung kiến thức học sinh còn gặp khó khăn[cite: 13].</td>
+                                        <td class="p-2.5 border border-slate-300">Bảng phân tích lỗi sai và khó khăn học tập[cite: 13].</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 border border-slate-300 text-center font-semibold">9</td>
+                                        <td class="p-2.5 border border-slate-300">So sánh kết quả giữa các bài kiểm tra hoặc các giai đoạn học tập để xác định mức độ tiến bộ của học sinh[cite: 14].</td>
+                                        <td class="p-2.5 border border-slate-300">Bảng so sánh kết quả học tập[cite: 14].</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 border border-slate-300 text-center font-semibold">10</td>
+                                        <td class="p-2.5 border border-slate-300">Dựa vào số liệu và biểu đồ để phân tích, nhận xét ưu điểm, hạn chế và xu hướng học tập của học sinh[cite: 14].</td>
+                                        <td class="p-2.5 border border-slate-300">Báo cáo phân tích kết quả học tập[cite: 14].</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 border border-slate-300 text-center font-semibold">11</td>
+                                        <td class="p-2.5 border border-slate-300">Nâng cao kĩ năng sử dụng Excel/Google Sheets thông qua các hàm thống kê, hàm điều kiện, bộ lọc và định dạng có điều kiện[cite: 14].</td>
+                                        <td class="p-2.5 border border-slate-300">Bảng tính sử dụng các công thức phân tích dữ liệu[cite: 14].</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 border border-slate-300 text-center font-semibold">12</td>
+                                        <td class="p-2.5 border border-slate-300">Ứng dụng AI hỗ trợ phân tích dữ liệu, nhận diện xu hướng học tập và đề xuất hướng hỗ trợ; kiểm tra tính chính xác của kết quả[cite: 14].</td>
+                                        <td class="p-2.5 border border-slate-300">Bản phân tích dữ liệu có hỗ trợ AI[cite: 14].</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 border border-slate-300 text-center font-semibold">13</td>
+                                        <td class="p-2.5 border border-slate-300">Đề xuất biện pháp điều chỉnh phương pháp dạy học, xây dựng hoạt động bổ trợ phù hợp với từng nhóm học sinh[cite: 14].</td>
+                                        <td class="p-2.5 border border-slate-300">Kế hoạch điều chỉnh hoạt động dạy học[cite: 14].</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 border border-slate-300 text-center font-semibold">14</td>
+                                        <td class="p-2.5 border border-slate-300">Tổng hợp dữ liệu, biểu đồ, nhận xét và giải pháp để xây dựng báo cáo phân tích kết quả học tập hoàn chỉnh[cite: 14].</td>
+                                        <td class="p-2.5 border border-slate-300">Báo cáo phân tích kết quả học tập hoàn chỉnh[cite: 14].</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-2.5 border border-slate-300 text-center font-semibold">15</td>
+                                        <td class="p-2.5 border border-slate-300">Tự đánh giá mức độ tiến bộ, đối chiếu với mục tiêu ban đầu và xác định những kĩ năng cần tiếp tục bồi dưỡng[cite: 14].</td>
+                                        <td class="p-2.5 border border-slate-300">Phiếu tự đánh giá cuối kì và hồ sơ minh chứng[cite: 14].</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
+
                 </div>
             </div>
 
